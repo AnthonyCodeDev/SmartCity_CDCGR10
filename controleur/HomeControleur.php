@@ -10,7 +10,7 @@ class HomeControleur {
     }
 
     public function afficherPage() {
-        $message = $this->modele->getMessage();
+        $welcomeMessage = $this->modele->getWelcomeMessage();
         require __DIR__ . '/../vue/home.php';
     }
 }

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    background-color: snow;
+    color: #0F0F0F;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+.disableselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.smartcity-navbar {
+    background-color: #00081A;
+    height: 85px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 max(1rem, 5%);
+}
+
+.smartcity-navbar a span {
+    font-weight: 600;
+}
+
+.smartcity-navbar-item-two a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 22px;
+    gap: 10px;
+
+    height: 20px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+
+}
+
+.smartcity-navbar-item-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.smartcity-title {
+
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #0B0023;
+
+
+}
+
+.smartcity-slogan {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 36px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #0B0023;
+
+}
+
+.smartcity-description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #0B0023;
+
+}
+
+.smartcity-btn-container {
+    margin-top: 30px;
+}
+
+.smartcity-container {
+    display: inline-block;
+    padding: 2px;
+    background: linear-gradient(90deg, #FFC700 0%, #FF0000 100%);
+    border-radius: 43px;
+    margin-top: 1px;
+}
+
+.smartcity-button {
+    padding: 8.82353px 30px;
+    background: #FFFFFF;
+    border: none;
+    /* Pas de bordure réelle */
+    border-radius: 41px;
+
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+
+    color: #000000;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05), 0px 2px 19px rgba(0, 0, 0, 0.07);
+
+}
+
+.smartcity-main-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 850px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
