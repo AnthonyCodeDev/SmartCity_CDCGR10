@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Bienvenue dans le fichier JavaScript !");
+    console.log("Site web chargé !");
 });
