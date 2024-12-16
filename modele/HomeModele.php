@@ -1,7 +1,8 @@
 <?php
 
 class HomeModele {
-    public function getMessage() {
-        return "Bienvenue sur la page d'accueil.";
+    public function getWelcomeMessage() {
+        // todo: envoyer tout va bien ou tout va mal
+        return "Tout va bien ! 🌞";
     }
 }
