@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Empêcher l'indexation automatique des fichiers
+Options -Indexes
+
+# Si aucune URL n'est spécifiée (racine), rediriger vers HomeControleur
+RewriteRule ^$ controleur/HomeControleur.php [L]
+
+# Si /incidents, rediriger vers IncidentsControleur
+RewriteRule ^incidents$ controleur/IncidentsControleur.php [L]
+
+# Si /capteurs, rediriger vers CapteursControleur
+RewriteRule ^capteurs$ controleur/CapteursControleur.php [L]
+
+# Rediriger toutes les requêtes non définies vers une page 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ controleur/Erreur404Controleur.php [L]
