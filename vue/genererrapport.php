@@ -8,7 +8,7 @@
 <section id="consommation" class="smartcity-conso">
     <div class="smartcity-conso-container smartcity-conso-container-blue">
         <div class="smartcity-conso-title">
-            5
+            <?= $recupererInformationsGlobales['consommation']; ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
@@ -19,27 +19,28 @@
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-orange">
         <div class="smartcity-conso-title">
-            5
+            <?= $recupererInformationsGlobales['productionSolaire']; ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
         </div>
         <div class="smartcity-conso-description">
-            Consommation
+            Production solaire
         </div>
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-green">
         <div class="smartcity-conso-title">
-            5
+            <?= $recupererInformationsGlobales['productionEolienne']; ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
         </div>
         <div class="smartcity-conso-description">
-            Consommation
+            Production éolienne
         </div>
     </div> 
 </section>
+
 
 <main class="smartcity-rapport-container">
     <a class="smartcity-container" href="genererrapport">

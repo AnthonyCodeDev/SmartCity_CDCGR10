@@ -20,6 +20,10 @@
                         Capteur Solaire #1
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                    🛑 Éteindre
+                </a>
             </div>
             <div class="smartcity-incidents-description">
             192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 84.25 kWh.
@@ -35,6 +39,10 @@
                         Capteur Solaire #2
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                    🛑 Éteindre
+                </a>
             </div>
             <div class="smartcity-incidents-description">
             192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 9.25 kWh.
@@ -50,6 +58,10 @@
                         Capteur Solaire #3
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
+                    🟢 Démarrer
+                </a>
             </div>
             <div class="smartcity-incidents-description">
             Un capteur solaire 192.168.1.1 ne répond plus. Les dernières 6 heures, ce capteur à produit 2.26 kWh.
@@ -70,6 +82,10 @@
                         Capteur Éolien #1
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                    🛑 Éteindre
+                </a>
             </div>
             <div class="smartcity-incidents-description">
             192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 2.56 kWh.
@@ -85,6 +101,10 @@
                         Capteur Éolien #2
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                    🛑 Éteindre
+                </a>
             </div>
             <div class="smartcity-incidents-description">
             192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 23.45 kWh.
@@ -100,6 +120,10 @@
                         Capteur Éolien #3
                     </div>
                 </div>
+
+                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
+                    🟢 Démarrer
+                </a>
             </div>
             <div class="smartcity-incidents-description">
                 Un capteur solaire 192.168.1.1 ne répond plus. Les dernières 6 heures, ce capteur à produit 2.5 kWh.

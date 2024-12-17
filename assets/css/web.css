@@ -681,3 +681,37 @@
     height: 80px;
     object-fit: cover;
 }
+
+.smartcity-incidents-alert-btn {
+    padding: 10px 20px;
+    background-color: #000cff12;
+    border: 2.25px solid #0000001f;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 50px auto;
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.chart-container-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #0B0023;
+
+}

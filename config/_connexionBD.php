@@ -1,7 +1,7 @@
 ﻿<?php
 // Informations de connexion
 $host = 'localhost';
-$dbname = 'smartcity_db';
+$dbname = 'db_smartcity_energie';
 $username = 'root';
 $password = '';
 
