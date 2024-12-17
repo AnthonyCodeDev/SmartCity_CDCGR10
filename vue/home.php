@@ -1,5 +1,4 @@
 <?php require_once __DIR__ . '/header.php'; ?>
-
 <main class="smartcity-main-container">
     <h1 class="smartcity-title"><?= $welcomeMessage; ?></h1>
     <div class="smartcity-slogan">Votre ville, connectée pour aujourd'hui et pensée pour demain.</div>
