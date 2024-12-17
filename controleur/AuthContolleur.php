@@ -17,7 +17,6 @@ class AuthControlleur {
         if (isset($_SESSION['utilisateur'])) {
             require_once __DIR__ . '/HomeControleur.php';
             $controleurHome = new HomeControleur();
-            $controleurHome->afficherPage();
             exit();
         }
 
@@ -29,8 +28,15 @@ class AuthControlleur {
                 exit();
             }
 
-            $email = trim($_POST['email']);
-            $motDePasse = trim($_POST['motDePasse']);
+            $email = htmlspecialchars(trim($_POST['email']));
+            $motDePasse = htmlspecialchars(trim($_POST['motDePasse']));
+
+            // vérifier si l'email est valide:
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $_SESSION['error'] = "Adresse email invalide.";
+                header('Location: ' . BASE_URL);
+                exit();
+            }
 
             // Récupération de l'utilisateur
             $utilisateur = $this->modele->recupererUtilisateurLDAP($email, $motDePasse);

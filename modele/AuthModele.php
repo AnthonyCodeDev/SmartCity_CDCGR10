@@ -11,7 +11,7 @@ class AuthModele {
     }
 
     // Récupère un utilisateur factice simulant un LDAP
-    public function recupererUtilisateurLDAP($email) {
+    public function recupererUtilisateurLDAP($email, $motDePasse) {
         // Simulation d'utilisateur stocké en dur (à remplacer par une vraie requête LDAP)
         $utilisateurs = [
             'a@b.c' => [

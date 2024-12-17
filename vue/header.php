@@ -12,6 +12,7 @@ require_once __DIR__ . '/../config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartCity - Suivi de consommation solaire & éolien</title>
     <link rel="stylesheet" href="assets/css/web.css">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <script src="assets/js/web.js" defer></script>
     <base href="<?php echo BASE_URL; ?>">
 </head>
