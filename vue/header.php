@@ -1,6 +1,8 @@
 
 <?php
-define('BASE_URL', '/SmartCity_CDCGR10/');
+
+require_once __DIR__ . '/../config/config.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +19,14 @@ define('BASE_URL', '/SmartCity_CDCGR10/');
     <header>
         <nav class="smartcity-navbar">
             <div class="smartcity-navbar-item-one">
-                <a href=""><span>SmartCity -</span> Suivi de consommation solaire & éolien</a>
+                <a href="<?php echo BASE_URL; ?>"><span>SmartCity -</span> Suivi de consommation solaire & éolien</a>
             </div>
             <div class="smartcity-navbar-item-two">
-                <a href="<?php echo BASE_URL; ?>">Consommation</a>
-                <a href="incidents">Production solaire</a>
-                <a href="capteurs">Incidents</a>
+                <a href="#consommation">Consommation</a>
+                <a href="#productionsolaire">Production solaire</a>
+                <a href="incidents">Incidents</a>
                 <a href="capteurs">Capteurs</a>
-                <a href="capteurs"><img src="assets/images/user.png">&nbsp;Anthony</a>
+                <a href="deconnexion">Déconnexion</a>
             </div>
         </nav>
     </header>

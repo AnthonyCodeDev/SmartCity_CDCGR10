@@ -11,6 +11,10 @@ body {
     overflow-x: hidden;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -54,6 +58,7 @@ h6 {
     justify-content: space-between;
     align-items: center;
     padding: 0 max(1rem, 5%);
+    overflow: hidden;
 }
 
 .smartcity-navbar a span {
@@ -68,7 +73,7 @@ h6 {
     padding: 7px 22px;
     gap: 10px;
 
-    height: 20px;
+    height: 35px;
 
     background: rgba(255, 255, 255, 0.09);
     border-radius: 20px;
@@ -96,6 +101,8 @@ h6 {
     text-align: center;
 
     color: #0B0023;
+
+    cursor: pointer;
 
 
 }
@@ -127,8 +134,8 @@ h6 {
 
 .smartcity-container {
     display: inline-block;
-    padding: 2px;
-    background: linear-gradient(90deg, #FFC700 0%, #FF0000 100%);
+    padding: 3px;
+    background: linear-gradient(90deg, #2B66FB 0%, #21C9C9 100%);
     border-radius: 43px;
     margin-top: 1px;
 }
@@ -137,7 +144,6 @@ h6 {
     padding: 8.82353px 30px;
     background: #FFFFFF;
     border: none;
-    /* Pas de bordure réelle */
     border-radius: 41px;
 
     font-weight: 700;
@@ -148,14 +154,17 @@ h6 {
     justify-content: center;
     align-items: center;
 
-    height: 30px;
+    height: auto;
+    min-height: 30px;
 
     color: #000000;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05), 0px 2px 19px rgba(0, 0, 0, 0.07);
 
+    text-align: center;
+
 }
 
-.smartcity-main-home {
+.smartcity-main-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,5 +172,414 @@ h6 {
     gap: 30px;
     max-width: 850px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: min(10%, 75px);
+    padding: 0 20px;
+}
+
+@media only screen and (max-width: 1535px) {
+    .smartcity-navbar {
+        justify-content: center;
+        flex-direction: column;
+        height: 110px;
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 1048px) {
+    .smartcity-navbar-item-two {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .smartcity-navbar {
+        height: auto;
+        padding: 20px;
+    }
+
+    .smartcity-navbar-item-two a {
+        width: 100%;
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .smartcity-navbar-item-one {
+        text-align: center;
+    }
+}
+
+.smartcity-conso {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0 auto;
+
+    margin-top: 50px;
+}
+
+.smartcity-conso-container {
+
+    width: 223px;
+    height: 153px;
+
+    border-radius: 15.1603px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+
+
+}
+
+.smartcity-conso-title {
+    font-weight: 700;
+    font-size: 37.3178px;
+    line-height: 45px;
+
+    color: #000000;
+
+}
+
+.smartcity-conso-iner {
+    font-weight: 700;
+    font-size: 17.4927px;
+    line-height: 21px;
+
+    color: #000000;
+
+
+}
+
+.smartcity-conso-description {
+    font-weight: 510;
+    font-size: 17.4927px;
+    line-height: 21px;
+    /* identical to box height */
+
+    color: #000000;
+
+
+}
+
+.smartcity-conso-container-blue {
+
+
+    background: linear-gradient(115.21deg, rgba(255, 255, 255, 0.25) 0%, rgba(3, 157, 224, 0.05) 100%);
+    border: 2.25px solid #039DE0;
+
+}
+
+.smartcity-conso-container-orange {
+
+    background: linear-gradient(115.21deg, rgba(255, 255, 255, 0.25) 0%, rgba(249, 183, 89, 0.05) 100%);
+    border: 2.25px solid #F9B759;
+
+}
+
+.smartcity-conso-container-green {
+
+    background: linear-gradient(115.21deg, rgba(255, 255, 255, 0.25) 0%, rgba(30, 158, 136, 0.05) 100%);
+    border: 2.25px solid #1E9E88;
+
+}
+
+@media only screen and (max-width: 625px) {
+    .smartcity-conso {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .smartcity-conso-container {
+        width: 100%;
+        max-width: 300px;
+        overflow: hidden;
+    }
+}
+
+.smartcity-incidents-container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 22px;
+    gap: 10px;
+
+    border: 2px solid rgba(186, 186, 186, 0.15);
+    border-radius: 15px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #000000;
+
+    width: fit-content;
+
+
+}
+
+.smartcity-incidents {
+    width: 95%;
+    max-width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin: 50px auto;
+
+}
+
+.smartcity-incidents-alert {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16.8013px;
+    gap: 8.4px;
+    width: 100%;
+
+    border-radius: 16.8013px;
+
+    margin-top: 10px;
+
+
+}
+
+.smartcity-incidents-alert.danger {
+    background: linear-gradient(112.24deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 111, 75, 0.05) 112.71%);
+    border: 1.89015px solid #FF6F4B;
+}
+
+.smartcity-incidents-alert.success {
+    background: linear-gradient(112.24deg, rgba(255, 255, 255, 0.25) 0%, rgba(70, 228, 30, 0.05) 112.71%);
+    border: 1.89015px solid #46E41E;
+}
+
+.smartcity-incidents-alert.warning {
+    background: linear-gradient(112.24deg, rgba(255, 255, 255, 0.25) 0%, rgba(249, 183, 89, 0.05) 112.71%);
+    border: 1.89015px solid #FFBA4B;
+}
+
+.smartcity-incidents-alert-title {
+
+    font-weight: 700;
+    font-size: 16.8013px;
+    line-height: 20px;
+
+    color: #000000;
+
+}
+
+.smartcity-incidents-alert-date {
+    font-weight: 500;
+    font-size: 16.8013px;
+    line-height: 20px;
+
+    color: #2B2B2B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+
+}
+
+.smartcity-incidents-description {
+    font-weight: 500;
+    font-size: 16.8013px;
+    line-height: 20px;
+
+    color: #000000;
+
+
+}
+
+.smartcity-incidents-alert-bubble {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.smartcity-incidents-alert.danger .smartcity-incidents-alert-content .smartcity-incidents-alert-icon .smartcity-incidents-alert-bubble {
+    background-color: #FF6F4B;
+}
+
+.smartcity-incidents-alert.warning .smartcity-incidents-alert-content .smartcity-incidents-alert-icon .smartcity-incidents-alert-bubble {
+    background-color: #FFBA4B;
+}
+
+.smartcity-incidents-alert.success .smartcity-incidents-alert-content .smartcity-incidents-alert-icon .smartcity-incidents-alert-bubble {
+    background-color: #46E41E;
+}
+
+.smartcity-incidents-alert-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.smartcity-incidents-alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .smartcity-incidents-alert-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.smartcity-create-incident {
+
+
+    background: linear-gradient(180deg, rgba(7, 0, 125, 0.83) 0%, rgba(5, 0, 90, 0.83) 100%);
+    border: 1px solid #080095;
+    border-radius: 4px;
+
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    padding: 10px 20px;
+    cursor: pointer;
+
+
+}
+
+.smartcity-incidents-inner {
+    width: 100%;
+}
+
+.smartcity-rapport-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 850px;
+    margin: 0 auto;
+    margin-top: min(10%, 35px);
+    padding: 0 20px;
+}
+
+/* Formulaire - Apple-like style */
+.smartcity-form {
+    width: 100%;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.smartcity-form-group {
+    margin-bottom: 20px;
+}
+
+.smartcity-form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.smartcity-form-input,
+.smartcity-form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.smartcity-form-input:focus,
+.smartcity-form-textarea:focus {
+    border-color: #007aff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+.smartcity-form-textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.smartcity-form-actions {
+    text-align: right;
+}
+
+.smartcity-form-button {
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.smartcity-form-button:hover {
+    background-color: #005ecb;
+}
+
+.smartcity-form-button:active {
+    background-color: #004ea6;
+}
+
+/* Styles pour le champ select */
+.smartcity-form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    /* Désactive le style par défaut */
+}
+
+.smartcity-form-select:focus {
+    border-color: #007aff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+.smartcity-form-select option {
+    font-size: 16px;
+}
+
+.smartcity-error {
+    color: #d9534f;
+    background-color: #f9d6d5;
+    border: 1px solid #d9534f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: -5px;
 }
