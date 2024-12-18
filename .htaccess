@@ -7,7 +7,7 @@ RewriteRule ^$ controleur/AuthContolleur.php [L]
 
 RewriteRule ^incidents$ controleur/IncidentsControleur.php [L]
 
-RewriteRule ^capteurs$ controleur/CapteursControleur.php [L]
+RewriteRule ^capteurs$ controleur/CapteurControleur.php [L]
 
 RewriteRule ^genererrapport$ controleur/GenererRapportControleur.php [L]
 

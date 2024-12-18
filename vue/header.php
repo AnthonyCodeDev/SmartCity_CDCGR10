@@ -16,6 +16,11 @@ require_once __DIR__ . '/../config/config.php';
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <script src="assets/js/web.js" defer></script>
     <base href="<?php echo BASE_URL; ?>">
+    <script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+    </script>
 </head>
 <body>
     <header>

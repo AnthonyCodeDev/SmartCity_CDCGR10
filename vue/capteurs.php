@@ -2,134 +2,95 @@
 
 <main class="smartcity-main-container">
     <h1 class="smartcity-title">Liste des capteurs</h1>
-    <div class="smartcity-slogan">Voici les capteurs installés, actifs et inactif.</div>
+    <div class="smartcity-slogan">Voici les capteurs installés, actifs et inactifs.</div>
 </main>
-
 <section class="smartcity-incidents">
-    <div class="smartcity-incidents-inner">
-        <div class="smartcity-incidents-container">
-            Capteurs solaires
-        </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Capteur Solaire #1
-                    </div>
-                </div>
-
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
-                    🛑 Éteindre
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-            192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 84.25 kWh.
-            </div>
-        </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Capteur Solaire #2
-                    </div>
-                </div>
-
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
-                    🛑 Éteindre
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-            192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 9.25 kWh.
-            </div>
-        </div>
-        <div class="smartcity-incidents-alert danger">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Capteur Solaire #3
-                    </div>
-                </div>
-
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
-                    🟢 Démarrer
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-            Un capteur solaire 192.168.1.1 ne répond plus. Les dernières 6 heures, ce capteur à produit 2.26 kWh.
-            </div>
-        </div>
+    <!-- Capteurs solaires -->
+    <div class="smartcity-incidents-container">
+        Capteurs Solaires
     </div>
-    <div class="smartcity-incidents-inner">
-        <div class="smartcity-incidents-container">
-            Capteurs éolien
-        </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
+    <?php if (!empty($capteursSolaire)): ?>
+        <?php foreach ($capteursSolaire as $capteur): ?>
+            <?php
+                $etatCapteur = $capteur['StateUp'] ? 'success' : 'danger';
+            ?>
+            <div class="smartcity-incidents-alert <?= $etatCapteur; ?>">
+                <div class="smartcity-incidents-alert-content">
                     <div class="smartcity-incidents-alert-title">
-                        Capteur Éolien #1
+                        <?= htmlspecialchars($capteur['Name']); ?> (<?= $capteur['IPv4']; ?>)
+                    </div>
+                    <div class="smartcity-incidents-alert-date">
+                        Ajouté le : <?= htmlspecialchars($capteur['DateAdded']); ?>
+                    </div>
+                    <div class="smartcity-incidents-actions" style="margin: 10px 0;">
+                        <?php if ($capteur['StateUp']): ?>
+                            <a href="capteurs?action=stop-sensor&id=<?= urlencode($capteur['IPv4']); ?>" 
+                               class="smartcity-incidents-alert-btn" 
+                               onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                                🛑 Éteindre
+                            </a>
+                        <?php else: ?>
+                            <a href="capteurs?action=start-sensor&id=<?= urlencode($capteur['IPv4']); ?>" 
+                               class="smartcity-incidents-alert-btn" 
+                               onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
+                                🟢 Démarrer
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
-
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
-                    🛑 Éteindre
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-            192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 2.56 kWh.
-            </div>
-        </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Capteur Éolien #2
-                    </div>
+                <div class="smartcity-incidents-description">
+                    <?= $capteur['nombre_donnees']; ?> mesures enregistrées.<br>
+                    Production dernières 6 heures : <?= number_format($capteur['production_6h'], 2); ?> kWh
                 </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Aucun capteur solaire à afficher.</p>
+    <?php endif; ?>
 
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
-                    🛑 Éteindre
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-            192.168.1.1 est actif. Les dernières 6 heures, ce capteur à produit 23.45 kWh.
-            </div>
-        </div>
-        <div class="smartcity-incidents-alert danger">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Capteur Éolien #3
-                    </div>
-                </div>
-
-                <a href="capteurs?action=delete-sensor&id=0" class="smartcity-incidents-alert-date smartcity-incidents-alert-btn" onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
-                    🟢 Démarrer
-                </a>
-            </div>
-            <div class="smartcity-incidents-description">
-                Un capteur solaire 192.168.1.1 ne répond plus. Les dernières 6 heures, ce capteur à produit 2.5 kWh.
-            </div>
-        </div>
+    <!-- Capteurs éoliens -->
+    <div class="smartcity-incidents-container">
+        Capteurs Éoliens
     </div>
+    <?php if (!empty($capteursEolien)): ?>
+        <?php foreach ($capteursEolien as $capteur): ?>
+            <?php
+                $etatCapteur = $capteur['StateUp'] ? 'success' : 'danger';
+            ?>
+            <div class="smartcity-incidents-alert <?= $etatCapteur; ?>">
+                <div class="smartcity-incidents-alert-content">
+                    <div class="smartcity-incidents-alert-title">
+                        <?= htmlspecialchars($capteur['Name']); ?> (<?= $capteur['IPv4']; ?>)
+                    </div>
+                    <div class="smartcity-incidents-alert-date">
+                        Ajouté le : <?= htmlspecialchars($capteur['DateAdded']); ?>
+                    </div>
+                    <div class="smartcity-incidents-actions" style="margin: 10px 0;">
+                        <?php if ($capteur['StateUp']): ?>
+                            <a href="capteurs?action=stop-sensor&id=<?= urlencode($capteur['IPv4']); ?>" 
+                               class="smartcity-incidents-alert-btn" 
+                               onclick="return confirm('Voulez-vous vraiment désactiver ce capteur ?');">
+                                🛑 Éteindre
+                            </a>
+                        <?php else: ?>
+                            <a href="capteurs?action=start-sensor&id=<?= urlencode($capteur['IPv4']); ?>" 
+                               class="smartcity-incidents-alert-btn" 
+                               onclick="return confirm('Voulez-vous vraiment allumer ce capteur ?');">
+                                🟢 Démarrer
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="smartcity-incidents-description">
+                    <?= $capteur['nombre_donnees']; ?> mesures enregistrées.<br>
+                    Production dernières 6 heures : <?= number_format($capteur['production_6h'], 2); ?> kWh
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Aucun capteur éolien à afficher.</p>
+    <?php endif; ?>
 </section>
+
 </body>
 </html>
