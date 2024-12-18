@@ -17,6 +17,7 @@ unset($_SESSION['error']);
     <style>
         body {
             background:#00081A;
+            color:snow;
         }
     </style>
     <script>
@@ -42,8 +43,8 @@ unset($_SESSION['error']);
         <?php endif; ?>
         <form action="<?= BASE_URL ?>" method="POST" class="login-form" autocomplete="off">
             <div class="form-group">
-                <label for="email">Adresse email</label>
-                <input type="email" id="email" name="email" placeholder="jean.dupont@consomation.lan" autocomplete="off">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="username" id="username" name="username" placeholder="antho.ny" autocomplete="off">
             </div>
 
             <div class="form-group disableselect">

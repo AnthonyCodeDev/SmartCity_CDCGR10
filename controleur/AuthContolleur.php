@@ -20,34 +20,28 @@ class AuthControlleur {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_POST['email']) || empty($_POST['motDePasse'])) {
+            if (empty($_POST['username']) || empty($_POST['motDePasse'])) {
                 $_SESSION['error'] = "Veuillez remplir tous les champs.";
                 header('Location: ' . BASE_URL);
                 exit();
             }
 
-            $email = htmlspecialchars(trim($_POST['email']));
+            $username = htmlspecialchars(trim($_POST['username']));
             $motDePasse = htmlspecialchars(trim($_POST['motDePasse']));
 
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $_SESSION['error'] = "Adresse email invalide.";
-                header('Location: ' . BASE_URL);
-                exit();
-            }
-
             // Vérification LDAP
-            $utilisateur = $this->modele->verifierUtilisateurLDAP($email, $motDePasse);
+            $utilisateur = $this->modele->verifierUtilisateurLDAP($username, $motDePasse);
 
-            if ($utilisateur || True) {
+            if ($utilisateur) {
                 // Stocker les informations utilisateur dans la session
                 $_SESSION['utilisateur'] = $utilisateur;
 
                 header('Location: ' . BASE_URL);
                 exit();
             } else {
-                $_SESSION['error'] = "Email ou mot de passe incorrect.";
-                header('Location: ' . BASE_URL);
-                exit();
+                $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrect.";
+                // header('Location: ' . BASE_URL);
+                // exit();
             }
         }
 
