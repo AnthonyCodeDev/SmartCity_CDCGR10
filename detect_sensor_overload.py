@@ -3,10 +3,10 @@ from datetime import datetime, timedelta
 
 # Configuration de la base de données
 db_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-    'database': 'db_smartcity_energie'
+    'host': 'x',
+    'user': 'y',
+    'password': 'z',
+    'database': 'a'
 }
 
 def connect_to_db():
