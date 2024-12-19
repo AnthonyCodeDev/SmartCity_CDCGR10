@@ -17,3 +17,6 @@ RewriteRule ^deconnexion$ controleur/DeconnexionControleur.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ controleur/Erreur404Controleur.php [L]
+
+
+# bloquer l'accès direct au dossier /vue

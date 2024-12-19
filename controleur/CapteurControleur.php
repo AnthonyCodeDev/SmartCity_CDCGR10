@@ -87,7 +87,6 @@ class CapteursControleur {
 $controleur = new CapteursControleur();
 
 if (isset($_GET['action'])) {
-    $this->checkPermission();
     switch ($_GET['action']) {
         case 'start-sensor':
         case 'stop-sensor':
@@ -99,7 +98,6 @@ if (isset($_GET['action'])) {
 } else {
     $controleur->afficherPage();
 }
-
 
 
 

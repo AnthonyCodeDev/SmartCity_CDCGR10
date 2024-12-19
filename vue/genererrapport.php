@@ -8,7 +8,7 @@
 <section id="consommation" class="smartcity-conso">
     <div class="smartcity-conso-container smartcity-conso-container-blue">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['consommation']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['consommation']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
@@ -19,7 +19,7 @@
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-orange">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['productionSolaire']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['productionSolaire']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
@@ -30,7 +30,7 @@
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-green">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['productionEolienne']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['productionEolienne']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh

@@ -142,18 +142,34 @@ class HomeModele {
         /*
         QUI: Vergeylen Anthony
         QUAND: 18-12-2024
-        QUOI: Retourne les 4 dernières alertes de surcharge de production
+        QUOI: Retourne les alertes de surcharge des 3 derniers jours et les incidents
         
         Arguments: aucun
         Return: array
         */
-        $stmt = $this->pdo->query("
-            SELECT *
+        // Récupération des alertes
+        $stmtAlertes = $this->pdo->query(
+            "SELECT *
             FROM alertes_surcharge
             WHERE date_signalement >= NOW() - INTERVAL 3 DAY
             ORDER BY date_signalement DESC
-            LIMIT 4
-        ");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            LIMIT 4"
+        );
+        $alertes = $stmtAlertes->fetchAll(PDO::FETCH_ASSOC);
+
+        // Récupération des incidents
+        $stmtIncidents = $this->pdo->query(
+            "SELECT *
+            FROM incidents
+            WHERE date_creation >= NOW() - INTERVAL 3 DAY
+            ORDER BY date_creation DESC
+            LIMIT 4"
+        );
+        $incidents = $stmtIncidents->fetchAll(PDO::FETCH_ASSOC);
+
+        return [
+            'alertes' => $alertes,
+            'incidents' => $incidents
+        ];
     }
 }

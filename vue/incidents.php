@@ -77,7 +77,7 @@ function getNiveauTexte($niveau) {
         <div class="smartcity-incidents-alert-content">
             <div class="smartcity-incidents-alert-icon">
                 <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
-                <div class="smartcity-incidents-alert-title">
+                <div class="smartcity-incidents-alert-title word-break">
                     <?php echo htmlspecialchars($incident['nom']); ?>
                 </div>
             </div>
@@ -94,7 +94,7 @@ function getNiveauTexte($niveau) {
                 <?php } ?>
             </div>
         </div>
-        <div class="smartcity-incidents-description">
+        <div class="smartcity-incidents-description word-break">
             <?php echo htmlspecialchars($incident['description']); ?>
         </div>
     </div>
@@ -121,15 +121,15 @@ foreach ($recupererAlertesProduction as $alerte) {
             <div class="smartcity-incidents-alert-icon">
                 <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
                 <div class="smartcity-incidents-alert-title">
-                    Alerte Surcharge <?= strtoupper($alerte['niveau']); ?>
+                    Alerte Surcharge <?= htmlspecialchars(strtoupper($alerte['niveau'])); ?>
                 </div>
             </div>
             <div class="smartcity-incidents-alert-date">
-                <?= $alerte['date_signalement']; ?>
+                <?= htmlspecialchars($alerte['date_signalement']); ?>
             </div>
         </div>
         <div class="smartcity-incidents-description">
-            <?= $alerte['description']; ?>
+            <?= htmlspecialchars($alerte['description']); ?>
         </div>
     </div>
     <?php

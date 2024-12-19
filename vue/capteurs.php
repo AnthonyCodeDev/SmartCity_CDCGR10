@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div class="smartcity-incidents-description">
-                    <?= $capteur['nombre_donnees']; ?> mesures enregistrées.<br>
-                    Production dernières 6 heures : <?= number_format($capteur['production_6h'], 2); ?> kWh
+                    <?= htmlspecialchars($capteur['nombre_donnees']); ?> mesures enregistrées.<br>
+                    Production dernières 6 heures : <?= number_format(htmlspecialchars($capteur['production_6h']), 2); ?> kWh
                 </div>
             </div>
         <?php endforeach; ?>
@@ -59,7 +59,7 @@
             ?>
             <div class="smartcity-incidents-alert <?= $etatCapteur; ?>">
                 <div class="smartcity-incidents-alert-content">
-                    <div class="smartcity-incidents-alert-title">
+                    <div class="smartcity-incidents-alert-title word-break">
                         <?= htmlspecialchars($capteur['Name']); ?> (<?= $capteur['IPv4']; ?>)
                     </div>
                     <div class="smartcity-incidents-alert-date">
@@ -82,8 +82,8 @@
                     </div>
                 </div>
                 <div class="smartcity-incidents-description">
-                    <?= $capteur['nombre_donnees']; ?> mesures enregistrées.<br>
-                    Production dernières 6 heures : <?= number_format($capteur['production_6h'], 2); ?> kWh
+                    <?= htmlspecialchars($capteur['nombre_donnees']); ?> mesures enregistrées.<br>
+                    Production dernières 6 heures : <?= number_format(htmlspecialchars($capteur['production_6h']), 2); ?> kWh
                 </div>
             </div>
         <?php endforeach; ?>

@@ -3,32 +3,49 @@
 <section class="smartcity-incidents" style="margin:15px auto;">
 <?php
 $i = 0;
-foreach ($recupererAlertesProduction as $alerte) {
-    // display only 3 alerts
-    if ($i++ >= 3) {
-        break;
-    }
-    ?>
-    <div class="smartcity-incidents-alert warning">
-        <div class="smartcity-incidents-alert-content">
-            <div class="smartcity-incidents-alert-icon">
-                <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
-                <div class="smartcity-incidents-alert-title">
-                    Alerte Surcharge <?= strtoupper($alerte['niveau']); ?>
+foreach ($recupererAlertesProduction as $categoryAlert) {
+    foreach ($categoryAlert as $alerte) {
+        if ($i++ >= 3) {
+            break;
+        }
+        
+        if (isset($alerte['niveau'])) {
+            $alertType = $alerte['niveau'] === 'critique' ? 'danger' : ($alerte['niveau'] === 'moyen' ? 'warning' : 'success');
+            $alerte['titre'] = "Alerte Surcharge " . strtoupper($alerte['niveau']);
+        } else {
+            $alertType = $alerte['niveauPriorite'] === 3 ? 'danger' : ($alerte['niveauPriorite'] === 2 ? 'warning' : 'success');
+            $alerte['titre'] = $alerte['nom'];
+        }
+
+        if (isset($alerte['date_signalement'])) {
+            $alerte['date_signalement'] = date('d/m/Y H:i', strtotime($alerte['date_signalement']));
+        } else {
+            $alerte['date_signalement'] = date('d/m/Y H:i', strtotime($alerte['date_creation']));
+        }
+        
+
+        ?>
+        <a class="smartcity-incidents-alert <?= $alertType; ?>" href="incidents">
+            <div class="smartcity-incidents-alert-content">
+                <div class="smartcity-incidents-alert-icon">
+                    <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
+                    <div class="smartcity-incidents-alert-title word-break">
+                        <?= htmlspecialchars($alerte['titre']); ?>
+                    </div>
+                </div>
+                <div class="smartcity-incidents-alert-date">
+                    <?= htmlspecialchars($alerte['date_signalement']); ?>
                 </div>
             </div>
-            <div class="smartcity-incidents-alert-date">
-                <?= $alerte['date_signalement']; ?>
+            <div class="smartcity-incidents-description word-break">
+                <?= htmlspecialchars($alerte['description']); ?>
             </div>
-        </div>
-        <div class="smartcity-incidents-description">
-            <?= $alerte['description']; ?>
-        </div>
-    </div>
-    <?php
+    </a>
+        <?php
+    }
 }
 // Si il y a + 3 elements dans le tableau, affiche un bouton pour voir plus
-if (count($recupererAlertesProduction) > 3) {
+if (count($recupererAlertesProduction) > 4) {
     ?>
     <a class="smartcity-incidents-btn" href="incidents">
         Voir plus
@@ -40,7 +57,7 @@ if (count($recupererAlertesProduction) > 3) {
 <?php } ?>
 
 <main class="smartcity-main-container">
-    <h1 class="smartcity-title"><?= $welcomeMessage; ?></h1>
+    <h1 class="smartcity-title"><?= htmlspecialchars($welcomeMessage); ?></h1>
     <div class="smartcity-slogan">Votre ville, connectée pour aujourd'hui et pensée pour demain.</div>
     <div class="smartcity-description">Surveillez en temps réel votre consommation et votre production d’énergie. Optimisez vos ressources pour un avenir plus durable. ⚡</div>
     <div class="smartcity-btn-container">
@@ -52,7 +69,7 @@ if (count($recupererAlertesProduction) > 3) {
 <section class="smartcity-conso">
     <div class="smartcity-conso-container smartcity-conso-container-blue">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['consommation']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['consommation']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
@@ -63,7 +80,7 @@ if (count($recupererAlertesProduction) > 3) {
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-orange">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['productionSolaire']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['productionSolaire']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh
@@ -74,7 +91,7 @@ if (count($recupererAlertesProduction) > 3) {
     </div>
     <div class="smartcity-conso-container smartcity-conso-container-green">
         <div class="smartcity-conso-title">
-            <?= $recupererInformationsGlobales['productionEolienne']; ?>
+            <?= htmlspecialchars($recupererInformationsGlobales['productionEolienne']); ?>
         </div>
         <div class="smartcity-conso-iner">
             kWh

@@ -304,8 +304,6 @@
     border-radius: 16.8013px;
 
     margin-top: 10px;
-
-
 }
 
 .smartcity-incidents-alert.danger {
@@ -346,7 +344,7 @@
 
     gap: 10px;
 
-
+    min-width: 250px;
 }
 
 .smartcity-incidents-description {
@@ -360,6 +358,7 @@
 }
 
 .smartcity-incidents-alert-bubble {
+    min-width: 15px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
