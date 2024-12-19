@@ -21,9 +21,9 @@ def connect_to_db():
         exit(1)
 
 def fetch_sensors(conn):
-    """Récupère les capteurs et leurs informations depuis la table sensor."""
+    """Récupère les capteurs actifs (StateUp = 1) et leurs informations depuis la table sensor."""
     cursor = conn.cursor(dictionary=True)
-    query = "SELECT IPv4, ID_SensorType FROM sensor"
+    query = "SELECT IPv4, ID_SensorType FROM sensor WHERE StateUp = 1"
     try:
         cursor.execute(query)
         sensors = cursor.fetchall()
@@ -33,6 +33,7 @@ def fetch_sensors(conn):
         return []
     finally:
         cursor.close()
+
 
 def insert_into_capteurs_energie(conn, sensors):
     """Insère une entrée aléatoire dans la table capteurs_energie."""
@@ -88,15 +89,8 @@ def main():
     conn = connect_to_db()
     sensors = fetch_sensors(conn)
 
-    try:
-        while True:
-            insert_into_capteurs_energie(conn, sensors)
-            insert_into_consommation_energie(conn)
-            time.sleep(300)
-    except KeyboardInterrupt:
-        print("Arrêt du script par l'utilisateur.")
-    finally:
-        conn.close()
+    insert_into_capteurs_energie(conn, sensors)
+    insert_into_consommation_energie(conn)
 
 if __name__ == "__main__":
     main()
