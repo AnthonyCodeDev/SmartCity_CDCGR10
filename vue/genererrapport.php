@@ -45,7 +45,7 @@
 </div>
 
 <main class="smartcity-rapport-container">
-    <a class="smartcity-container" href="genererrapport">
+    <a class="smartcity-container" href="getRapport-<?= date('d-m-Y-H-i'); ?>.pdf">
         <div class="smartcity-button">Créer un rapport instantané</div>
     </a>
     <div class="smartcity-description">La génération du rapport peut prendre jusqu’a 1 minute.</div>
@@ -56,36 +56,51 @@
         <div class="smartcity-incidents-container">
             Rapports de SmartCity
         </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
+        <?php 
+        if (count($recupererRapports) > 0) {
+            foreach ($recupererRapports as $rapport) { ?>
+            <a href="<?= htmlspecialchars($rapport['chemin_access']); ?>">
+                <div class="smartcity-incidents-alert success">
+                    <div class="smartcity-incidents-alert-content">
+                        <div class="smartcity-incidents-alert-icon">
+                            <div class="smartcity-incidents-alert-bubble">
+                                &nbsp;
+                            </div>
+                            <div class="smartcity-incidents-alert-title">
+                                Rapport <?= $rapport['rapport_type'] == 1 ? 'automatique' : 'manuel'; ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Rapport automatique
+                    <div class="smartcity-incidents-description">
+                        <?php
+                        $dateRapport = substr($rapport['chemin_access'], 14, 16); // Exemple : '19-12-2024-14-54'
+                        $dateParts = explode('-', $dateRapport); // Découpage en ['19', '12', '2024', '14', '54']
+                        $formattedDate = sprintf('%s-%s-%s %s:%s', $dateParts[2], $dateParts[1], $dateParts[0], $dateParts[3], $dateParts[4]);
+                        $dateRapport = date('d-m-Y H:i', strtotime($formattedDate));
+                        ?>
+                        Accéder au rapport <?= $rapport['rapport_type'] == 1 ? 'automatique' : 'manuel'; ?> du <?= $dateRapport; ?>
+                    </div>
+
+                </div>
+            </a>
+            <?php } ?>
+        <?php } else { ?>
+            <div class="smartcity-incidents-alert error">
+                <div class="smartcity-incidents-alert-content">
+                    <div class="smartcity-incidents-alert-icon">
+                        <div class="smartcity-incidents-alert-bubble">
+                            &nbsp;
+                        </div>
+                        <div class="smartcity-incidents-alert-title">
+                            Aucun rapport
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="smartcity-incidents-description">
-                Accéder au rapport automatique du 10/10/2021
-            </div>
-        </div>
-        <div class="smartcity-incidents-alert success">
-            <div class="smartcity-incidents-alert-content">
-                <div class="smartcity-incidents-alert-icon">
-                    <div class="smartcity-incidents-alert-bubble">
-                        &nbsp;
-                    </div>
-                    <div class="smartcity-incidents-alert-title">
-                        Rapport manuel
-                    </div>
+                <div class="smartcity-incidents-description">
+                    Aucun rapport n'a été généré pour le moment.
                 </div>
             </div>
-            <div class="smartcity-incidents-description">
-                Accéder au rapport manuel du 10/10/2021
-            </div>
-        </div>
+        <?php } ?>
     </div>
 </section>
 </body>

@@ -3,13 +3,16 @@ RewriteEngine On
 # Empêcher l'indexation automatique des fichiers
 Options -Indexes
 
-RewriteRule ^$ controleur/AuthContolleur.php [L]
+RewriteRule ^$ controleur/AuthContoleur.php [L]
 
 RewriteRule ^incidents$ controleur/IncidentsControleur.php [L]
 
 RewriteRule ^capteurs$ controleur/CapteurControleur.php [L]
 
 RewriteRule ^genererrapport$ controleur/GenererRapportControleur.php [L]
+RewriteRule ^generationPDF$ controleur/GenerationPDFControleur.php [L]
+RewriteRule ^getRapport-\d{2}-\d{2}-\d{4}-\d{2}-\d{2}\.pdf$ config/genpdf.php [L]
+RewriteRule ^rapportGlobal-(\d{2}-\d{2}-\d{4}-\d{2}-\d{2})\.pdf$ assets/rapports/rapportGlobal-$1.pdf [L]
 
 RewriteRule ^deconnexion$ controleur/DeconnexionControleur.php [L]
 
