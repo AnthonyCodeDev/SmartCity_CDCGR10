@@ -728,3 +728,18 @@ canvas {
     text-align: center;
     margin-top: 20px;
 }
+
+.smartcity-incidents-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.smartcity-incidents-hr {
+    width: 100%;
+    max-width: 1400px;
+    border: 1px solid #00000014;
+    margin: 0 auto;
+    margin-top: 20px;
+}

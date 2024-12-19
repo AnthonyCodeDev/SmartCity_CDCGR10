@@ -33,6 +33,8 @@ class IncidentsControleur {
         Arguments: aucun
         Return: aucun
         */
+
+        $recupererAlertesProduction = $this->modele->recupererAlertesProduction();
         $description = $this->modele->getDescription();
         $recupererDerniersIncidents = $this->modele->recupererDerniersIncidents();
         $incidentEdit = null;

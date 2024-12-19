@@ -1,4 +1,44 @@
 <?php require_once __DIR__ . '/header.php'; ?>
+<?php if (count($recupererAlertesProduction) > 0) { ?>
+<section class="smartcity-incidents" style="margin:15px auto;">
+<?php
+$i = 0;
+foreach ($recupererAlertesProduction as $alerte) {
+    // display only 3 alerts
+    if ($i++ >= 3) {
+        break;
+    }
+    ?>
+    <div class="smartcity-incidents-alert warning">
+        <div class="smartcity-incidents-alert-content">
+            <div class="smartcity-incidents-alert-icon">
+                <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
+                <div class="smartcity-incidents-alert-title">
+                    Alerte Surcharge <?= strtoupper($alerte['niveau']); ?>
+                </div>
+            </div>
+            <div class="smartcity-incidents-alert-date">
+                <?= $alerte['date_signalement']; ?>
+            </div>
+        </div>
+        <div class="smartcity-incidents-description">
+            <?= $alerte['description']; ?>
+        </div>
+    </div>
+    <?php
+}
+// Si il y a + 3 elements dans le tableau, affiche un bouton pour voir plus
+if (count($recupererAlertesProduction) > 3) {
+    ?>
+    <a class="smartcity-incidents-btn" href="incidents">
+        Voir plus
+    </a>
+    <?php
+}
+?>
+</section>
+<?php } ?>
+
 <main class="smartcity-main-container">
     <h1 class="smartcity-title"><?= $welcomeMessage; ?></h1>
     <div class="smartcity-slogan">Votre ville, connectée pour aujourd'hui et pensée pour demain.</div>
@@ -45,7 +85,7 @@
     </div> 
 </section>
 <div class="smartcity-graph-description">
-    Statistiques des derniers 30 jours.
+    Statistiques globales des dernières 24 heures.
 </div>
 
 <section class="smartcity-graph" id="consommation">

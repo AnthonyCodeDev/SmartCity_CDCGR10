@@ -47,6 +47,7 @@ class HomeControleur {
         $recupererInformationsGlobales = $this->modele->recupererInformationsGlobales();
         $consommation30Jours = $this->modele->recupererConsommation30Jours();
         $production30Jours = $this->modele->recupererProduction30Jours();
+        $recupererAlertesProduction = $this->modele->recupererAlertesProduction();
     
         // Formater les valeurs pour chaque résultat
         $recupererInformationsGlobales = array_map(function($valeur) {

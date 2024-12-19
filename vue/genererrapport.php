@@ -41,7 +41,7 @@
     </div> 
 </section>
 <div class="smartcity-graph-description">
-    Statistiques des derniers 30 jours.
+    Statistiques globales des dernières 24 heures.
 </div>
 
 <main class="smartcity-rapport-container">

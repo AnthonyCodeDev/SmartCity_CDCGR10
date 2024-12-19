@@ -108,6 +108,24 @@ class IncidentsModele {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public function recupererAlertesProduction() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Retourne toutes les alertes de surchage
+        
+        Arguments: aucun
+        Return: array
+        */
+        $stmt = $this->pdo->query("
+            SELECT *
+            FROM alertes_surcharge
+            ORDER BY date_signalement DESC
+            LIMIT 10
+        ");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     
     
     

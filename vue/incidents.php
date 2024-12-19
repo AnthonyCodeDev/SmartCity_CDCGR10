@@ -107,5 +107,37 @@ function getNiveauTexte($niveau) {
 
 </section>
 
+<?php if (count($recupererAlertesProduction) > 0) { ?>
+<hr class="smartcity-incidents-hr">
+<section class="smartcity-incidents">
+<div class="smartcity-incidents-container">
+    Alertes de surcharge
+</div>
+<?php
+foreach ($recupererAlertesProduction as $alerte) {
+    ?>
+    <div class="smartcity-incidents-alert warning">
+        <div class="smartcity-incidents-alert-content">
+            <div class="smartcity-incidents-alert-icon">
+                <div class="smartcity-incidents-alert-bubble">&nbsp;</div>
+                <div class="smartcity-incidents-alert-title">
+                    Alerte Surcharge <?= strtoupper($alerte['niveau']); ?>
+                </div>
+            </div>
+            <div class="smartcity-incidents-alert-date">
+                <?= $alerte['date_signalement']; ?>
+            </div>
+        </div>
+        <div class="smartcity-incidents-description">
+            <?= $alerte['description']; ?>
+        </div>
+    </div>
+    <?php
+}
+?>
+</section>
+<?php } ?>
+
+
 </body>
 </html>
