@@ -9,10 +9,26 @@ class CapteursControleur {
     private $modele;
 
     public function __construct() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Constructeur de la classe CapteursControleur
+        
+        Arguments: aucun
+        Return: string
+        */
         $this->modele = new CapteurModele();
     }
 
     public function checkPermission() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Vérifier les permissions
+        
+        Arguments: aucun
+        Return: string
+        */
         if (!(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin")) {
             header('Location: ' . BASE_URL);
             exit();
@@ -20,6 +36,14 @@ class CapteursControleur {
     }
 
     public function afficherPage() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Afficher la page
+        
+        Arguments: aucun
+        Return: vue
+        */
         $this->checkPermission();
         $capteursSolaire = $this->modele->recupererCapteursParType(1); // 1 = solaire
         $capteursEolien = $this->modele->recupererCapteursParType(2); // 2 = éolien
@@ -39,6 +63,14 @@ class CapteursControleur {
     
 
     public function changerEtatCapteur() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Changer l'état du capteur
+        
+        Arguments: aucun
+        Return: string
+        */
         $this->checkPermission();
         if (isset($_GET['id']) && isset($_GET['action'])) {
             $ipCapteur = htmlspecialchars($_GET['id']);

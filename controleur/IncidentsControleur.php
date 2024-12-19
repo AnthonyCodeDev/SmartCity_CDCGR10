@@ -13,10 +13,26 @@ class IncidentsControleur {
     private $modele;
 
     public function __construct() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Constructeur de la classe IncidentsControleur
+        
+        Arguments: aucun
+        Return: aucun
+        */
         $this->modele = new IncidentsModele();
     }
 
     public function afficherPage() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Afficher la page des incidents
+        
+        Arguments: aucun
+        Return: aucun
+        */
         $description = $this->modele->getDescription();
         $recupererDerniersIncidents = $this->modele->recupererDerniersIncidents();
         $incidentEdit = null;
@@ -29,6 +45,14 @@ class IncidentsControleur {
     }
 
     public function checkPermission() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Vérifier les permissions de l'utilisateur
+        
+        Arguments: aucun
+        Return: aucun
+        */
         if (!(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin")) {
             header('Location: incidents');
             exit();
@@ -36,6 +60,14 @@ class IncidentsControleur {
     }
 
     public function creerIncident() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Créer un nouvel incident
+        
+        Arguments: aucun
+        Return: aucun
+        */
         $this->checkPermission();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nom = trim($_POST['nom']);
@@ -57,6 +89,14 @@ class IncidentsControleur {
     }
     
     public function mettreAJourIncident() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Mettre à jour un incident existant
+        
+        Arguments: aucun
+        Return: aucun
+        */
         $this->checkPermission();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = (int)$_POST['id'];
@@ -79,6 +119,14 @@ class IncidentsControleur {
     }
     
     private function validerIncident($nom, $description, $niveau) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Valider les données d'un incident
+        
+        Arguments: nom (string), description (string), niveau (int)
+        Return: bool
+        */
         $this->checkPermission();
         // Valide le nom (min 3, max 100)
         if (strlen($nom) < 3 || strlen($nom) > 100) {
@@ -100,6 +148,14 @@ class IncidentsControleur {
     
 
     public function supprimerIncident() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Supprimer un incident
+        
+        Arguments: aucun
+        Return: aucun
+        */
         $this->checkPermission();
         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             $id = (int) $_GET['id'];
@@ -109,10 +165,6 @@ class IncidentsControleur {
         exit();
     }
 
-    
-    
-    
-    
 }
 
 // Exécuter le contrôleur

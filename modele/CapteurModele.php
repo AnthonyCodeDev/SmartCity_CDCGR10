@@ -5,11 +5,27 @@ class CapteurModele {
     private $pdo;
 
     public function __construct() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Constructeur de la classe CapteurModele
+
+        Arguments: aucun
+        Return: string
+        */
         global $pdo;
         $this->pdo = $pdo;
     }
 
     public function calculerProductionDernieresHeures($ipCapteur, $heures = 6) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Calculer la production des dernières heures
+        
+        Arguments: ipCapteur (string), heures (int)
+        Return: int
+        */
         $stmt = $this->pdo->prepare("
             SELECT SUM(valeur) as total
             FROM capteurs_energie
@@ -25,6 +41,14 @@ class CapteurModele {
         
 
     public function recupererCapteursParType($type) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Récupérer les capteurs par type
+        
+        Arguments: type (int)
+        Return: array
+        */
         $stmt = $this->pdo->prepare("
             SELECT 
                 s.IPv4, 
@@ -42,12 +66,17 @@ class CapteurModele {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
-    
-    
 
     // Récupère tous les capteurs avec leur statut
     public function recupererCapteurs() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Récupérer tous les capteurs avec leur statut
+        
+        Arguments: aucun
+        Return: array
+        */
         $stmt = $this->pdo->query("
             SELECT IPv4, Name, StateUp, DateAdded
             FROM sensor
@@ -58,6 +87,14 @@ class CapteurModele {
 
     // Compte le nombre de données de consommation pour chaque capteur
     public function compterDonneesCapteur($ipCapteur) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Compter le nombre de données de consommation pour chaque capteur
+        
+        Arguments: ipCapteur (string)
+        Return: int
+        */
         $stmt = $this->pdo->prepare("
             SELECT COUNT(*) as total
             FROM capteurs_energie
@@ -71,6 +108,14 @@ class CapteurModele {
 
     // Met à jour l'état d'un capteur (Start/Stop)
     public function mettreAJourEtatCapteur($ipCapteur, $etat) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Mettre à jour l'état d'un capteur (Start/Stop)
+        
+        Arguments: ipCapteur (string), etat (bool)
+        Return: aucun
+        */
         $stmt = $this->pdo->prepare("
             UPDATE Sensor
             SET StateUp = :etat

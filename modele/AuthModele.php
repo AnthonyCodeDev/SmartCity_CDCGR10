@@ -9,6 +9,15 @@ class AuthModele {
 
     // Méthode pour vérifier l'utilisateur dans LDAP
     public function verifierUtilisateurLDAP($username, $motDePasse) {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Vérifier l'utilisateur dans LDAP
+        
+        Arguments: username (string), motDePasse (string)
+        Return: array
+        */
+
         // Connexion au serveur LDAP
         $ldapConnection = ldap_connect($this->ldapHost, $this->ldapPort);
 

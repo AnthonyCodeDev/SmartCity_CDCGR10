@@ -40,7 +40,9 @@
         </div>
     </div> 
 </section>
-
+<div class="smartcity-graph-description">
+    Statistiques des derniers 30 jours.
+</div>
 
 <main class="smartcity-rapport-container">
     <a class="smartcity-container" href="genererrapport">

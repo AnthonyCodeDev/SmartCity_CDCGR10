@@ -8,10 +8,27 @@ class AuthControlleur {
     private $modele;
 
     public function __construct() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Constructeur de la classe AuthControlleur
+        
+        Arguments: aucun
+        Return: string
+        */
         $this->modele = new AuthModele();
     }
 
     public function verifierConnexion() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Vérifier la connexion
+        
+        Arguments: aucun
+        Return: string
+        */
+
         if (isset($_SESSION['utilisateur'])) {
             require_once __DIR__ . '/HomeControleur.php';
             $controleurHome = new HomeControleur();
@@ -49,6 +66,15 @@ class AuthControlleur {
     }
 
     public function afficherPage() {
+        /*
+        QUI: Vergeylen Anthony
+        QUAND: 18-12-2024
+        QUOI: Afficher la page
+        
+        Arguments: aucun
+        Return: vue
+        */
+
         require __DIR__ . '/../vue/auth.php';
     }
 }

@@ -44,6 +44,9 @@
         </div>
     </div> 
 </section>
+<div class="smartcity-graph-description">
+    Statistiques des derniers 30 jours.
+</div>
 
 <section class="smartcity-graph" id="consommation">
     <div class="chart-container">
@@ -64,7 +67,7 @@
 </section>
 
     <script src="assets/js/chart.js"></script>
-    
+
     <script>
         // Récupère les données de PHP
         const labels = <?= json_encode(array_column($production30Jours, 'jour')); ?>;
