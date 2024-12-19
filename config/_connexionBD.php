@@ -1,9 +1,20 @@
 ﻿<?php
+
+require_once __DIR__ . '/config.php';
 // Informations de connexion
-$host = 'localhost';
-$dbname = 'db_smartcity_energie';
-$username = 'root';
-$password = '';
+if ($productionMode == false) {
+    // DEV MODE
+    $host = 'localhost';
+    $dbname = 'db_smartcity_energie';
+    $username = 'root';
+    $password = '';
+} else {
+    // PROD MODE
+    $host = 'localhost';
+    $dbname = 'db_smartcity_energie';
+    $username = 'root';
+    $password = 'HEH2/16';
+}
 
 // Options PDO
 $options = [
