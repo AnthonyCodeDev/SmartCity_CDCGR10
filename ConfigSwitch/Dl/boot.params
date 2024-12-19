@@ -1,0 +1,12 @@
+boot empipaddr 10.4.50.165:ff000000
+boot empgatewayipaddr 10.4.50.5
+boot serialbaudrate 9600
+boot serialparity none
+boot serialwordsize 8
+boot serialstopbits 1
+boot serialmode modemControlOff
+boot reboottimer 0
+boot runningversion working
+boot nextrunningversion certified
+boot numresets 23
+boot numtakeovers 23

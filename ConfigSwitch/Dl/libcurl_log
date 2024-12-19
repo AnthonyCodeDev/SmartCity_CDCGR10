@@ -1,0 +1,243 @@
+********************************************************************************
+Timestamp = SUN JAN 02 2000  12:41:59 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  13:12:02 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  13:42:05 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  14:12:10 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  14:42:14 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  15:12:18 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  15:42:22 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  16:12:26 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  16:42:30 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  17:12:33 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  17:42:37 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  18:12:41 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  18:42:45 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  19:12:49 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  19:42:52 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  20:12:56 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  20:43:00 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  21:13:03 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  21:43:07 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  22:13:11 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  22:43:15 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  23:13:18 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = SUN JAN 02 2000  23:43:22 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = MON JAN 03 2000  00:13:27 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = MON JAN 03 2000  00:43:31 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = MON JAN 03 2000  01:13:35 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0
+********************************************************************************
+Timestamp = MON JAN 03 2000  01:43:39 (UTC)
+Call home URL =https://activation.myovcloud.com/api/actserver/callhome
+Call home Request body:
+ {"data": {"devices": [{"serialNumber": "Y48Q0466", "hash": "5e6f597970cbb68c6fba79a10eca6008ec93f9165fb7b2c0816ed26232b85e10", "deviceMacAddress": "94:24:e1:29:28:4a", "modelName": "OS6350-24", "partNumber": "903793-90", "role": "standalone", "currentSoftwareVersion": "6.7.2.89.R06", "currentCertifiedSoftwareVersion": "6.7.2.89.R06", "currentRunningDirectory": "/flash/working", "deviceCloudGroup": "unknown", "authMethod": "hash"}]}}
+* timeout on name lookup is not supported
+* getaddrinfo(3) failed for activation.myovcloud.com:443
+* Couldn't resolve host 'activation.myovcloud.com'
+* Closing connection 0

@@ -1,0 +1,90 @@
+ 
+##########################################
+#		Vlan réseau		 #
+##########################################
+
+vlan 10 name "Transport"
+ip interface vlan-10 address 192.168.11.254/23 vlan 10
+vlan 10 port default 1/0-5 
+
+vlan 20 name "Energie"
+ip interface vlan-20 address 192.168.21.254/23 vlan 20
+vlan 20 port default 1/6-10
+
+vlan 30 name "Securite"
+ip interface vlan-30 address 192.168.31.254/22 vlan 30
+vlan 30 port default 1/11-15
+
+vlan 40 name "Eau"
+ip interface vlan-40 address 192.168.43.254/22 vlan 40
+vlan 40 port default 1/16-20
+
+vlan 100 name "Commun"
+ip interface vlan-100 address 192.168.100.254 vlan 100
+vlan 100 port default 1/21-24
+
+#######
+# SSH #
+#######
+
+ssh enable
+
+#########################################
+#		ACL VLAN		#
+#########################################
+
+policy network group Destination 192.168.100.0 mask 255.255.255.0
+policy condition ConditionVlan destination network group Destination
+policy condition ConditionLDAP source network group Destination
+policy action AcceptVlan disposition accept
+policy action Trash disposition drop
+
+policy rule RegleVlan precedence 2 condition ConditionVlan action AcceptVlan
+policy rule RegleLDAP precedence 1 condition ConditionLDAP action AcceptVlan
+### qos default bridged disposition drop ###
+### qos default multicast disposition ###
+qos apply
+
+# config actuelle... ip helper address 192.168.100.2
+# config actuelle...ip helper standart
+
+##########################################
+#		DHCP Snooping		 #
+#	EN TRUST: LEs ip statiques	 #
+#	En FILTER PORT, les client DHCP	 #
+##########################################
+
+ip helper dhcp-snooping enable
+ip helper dhcp-snooping binding enable
+
+#Vlan10
+ip helper dhcp-snooping ip-source-filter port 1/4-5
+ip helper dhcp-snooping port 1/1-3 trust
+
+#Vlan20
+ip helper dhcp-snooping ip-source-filter port 1/9-10
+ip helper dhcp-snooping port 1/6-8 trust
+
+#vlan30
+ip helper dhcp-snooping ip-source-filter port 1/14-15
+ip helper dhcp-snooping port 1/11-13 trust
+
+#vlan40
+ip helper dhcp-snooping ip-source-filter port 1/19-20
+ip helper dhcp-snooping port 1/16-18 trust
+
+#vlan100
+ip helper dhcp-snooping ip-source-filter port 1/24
+ip helper dhcp-snooping port 1/21-23
+
+#########################################
+#		DHCP RELAY		#
+#	Addresses des DHCP par vlan	#
+#########################################
+
+ip helper address 192.168.100.2 192.168.10.2 vlan 10
+ip helper address 192.168.100.2 192.168.20.2 vlan 20
+ip helper address 192.168.100.2 192.168.28.2 vlan 30
+ip helper address 192.168.100.2 192.168.40.2 vlan 40
+
+ip helper per-vlan
