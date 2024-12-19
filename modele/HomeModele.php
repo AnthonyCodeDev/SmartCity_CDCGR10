@@ -138,3 +138,106 @@ class HomeModele {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+
+
+
+
+// // Test 1 : Récupération du message de bienvenue
+// echo "Test 1 : Message de bienvenue\n";
+// $homeModele = new HomeModele();
+// $_SESSION['utilisateur'] = ['nom' => 'Doe', 'prenom' => 'John'];
+// $result = $homeModele->getWelcomeMessage();
+// if ($result === "Tout va bien Doe John ! 😊") {
+//     echo "PASS : Message de bienvenue correctement généré.\n";
+// } else {
+//     echo "FAIL : Message de bienvenue incorrect.\n";
+// }
+
+// // Test 2 : Calcul de la production des dernières 24 heures
+// echo "\nTest 2 : Production des dernières 24 heures\n";
+// $homeModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetch() {
+//                 return ['total' => 200]; // Valeur simulée
+//             }
+//         };
+//     }
+// };
+// $result = $homeModele->recupererProductionDernieres24h(1);
+// if ($result === 200) {
+//     echo "PASS : Production des dernières 24 heures correctement calculée.\n";
+// } else {
+//     echo "FAIL : Production des dernières 24 heures incorrecte.\n";
+// }
+
+// // Test 3 : Récupération des informations globales
+// echo "\nTest 3 : Informations globales\n";
+// $homeModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetch() {
+//                 return ['total' => 100];
+//             }
+//         };
+//     }
+//     public function query($query) {
+//         return new class {
+//             public function fetch() {
+//                 return ['total' => 300];
+//             }
+//         };
+//     }
+// };
+// $result = $homeModele->recupererInformationsGlobales();
+// if ($result['consommation'] === 300 && $result['productionSolaire'] === 100 && $result['productionEolienne'] === 100) {
+//     echo "PASS : Informations globales correctement récupérées.\n";
+// } else {
+//     echo "FAIL : Informations globales incorrectes.\n";
+// }
+
+// // Test 4 : Récupération de la consommation des 30 derniers jours
+// echo "\nTest 4 : Consommation des 30 derniers jours\n";
+// $homeModele->pdo = new class {
+//     public function query($query) {
+//         return new class {
+//             public function fetchAll($fetchStyle = null) {
+//                 return [
+//                     ['jour' => '2024-12-01', 'total' => 50],
+//                     ['jour' => '2024-12-02', 'total' => 70]
+//                 ];
+//             }
+//         };
+//     }
+// };
+// $result = $homeModele->recupererConsommation30Jours();
+// if (count($result) === 2 && $result[0]['jour'] === '2024-12-01' && $result[0]['total'] === 50) {
+//     echo "PASS : Consommation des 30 derniers jours correctement récupérée.\n";
+// } else {
+//     echo "FAIL : Consommation des 30 derniers jours incorrecte.\n";
+// }
+
+// // Test 5 : Récupération de la production des 30 derniers jours
+// echo "\nTest 5 : Production des 30 derniers jours\n";
+// $homeModele->pdo = new class {
+//     public function query($query) {
+//         return new class {
+//             public function fetchAll($fetchStyle = null) {
+//                 return [
+//                     ['jour' => '2024-12-01', 'solaire' => 30, 'eolienne' => 40],
+//                     ['jour' => '2024-12-02', 'solaire' => 50, 'eolienne' => 60]
+//                 ];
+//             }
+//         };
+//     }
+// };
+// $result = $homeModele->recupererProduction30Jours();
+// if (count($result) === 2 && $result[0]['jour'] === '2024-12-01' && $result[0]['solaire'] === 30 && $result[0]['eolienne'] === 40) {
+//     echo "PASS : Production des 30 derniers jours correctement récupérée.\n";
+// } else {
+//     echo "FAIL : Production des 30 derniers jours incorrecte.\n";
+// }

@@ -112,3 +112,110 @@ class IncidentsModele {
     
     
 }
+
+
+
+
+
+// // Test 1 : Récupération de la description
+
+// echo "Test 1 : Description de la page incidents\n";
+// $incidentsModele = new IncidentsModele();
+// $_SESSION['utilisateur'] = ['role' => 'admin'];
+// $result = $incidentsModele->getDescription();
+// if ($result === "Vérifiez les derniers incidents et intervenez si besoin.") {
+//     echo "PASS : Description pour admin correcte.\n";
+// } else {
+//     echo "FAIL : Description pour admin incorrecte.\n";
+// }
+
+// $_SESSION['utilisateur'] = ['role' => 'user'];
+// $result = $incidentsModele->getDescription();
+// if ($result === "Bienvenue sur la page des incidents. Vous pouvez voir les incidents.") {
+//     echo "PASS : Description pour utilisateur correcte.\n";
+// } else {
+//     echo "FAIL : Description pour utilisateur incorrecte.\n";
+// }
+
+// // Test 2 : Récupération des derniers incidents
+// echo "\nTest 2 : Récupération des derniers incidents\n";
+// $incidentsModele->pdo = new class {
+//     public function query($query) {
+//         return new class {
+//             public function fetchAll() {
+//                 return [
+//                     ['ID_incident' => 1, 'nom' => 'Incident 1', 'description' => 'Description 1', 'date_creation' => '2024-12-18', 'niveauPriorite' => 2],
+//                     ['ID_incident' => 2, 'nom' => 'Incident 2', 'description' => 'Description 2', 'date_creation' => '2024-12-17', 'niveauPriorite' => 3]
+//                 ];
+//             }
+//         };
+//     }
+// };
+// $result = $incidentsModele->recupererDerniersIncidents();
+// if (count($result) === 2 && $result[0]['ID_incident'] === 1) {
+//     echo "PASS : Derniers incidents correctement récupérés.\n";
+// } else {
+//     echo "FAIL : Derniers incidents non récupérés correctement.\n";
+// }
+
+// // Test 3 : Récupération d'un incident par ID
+// echo "\nTest 3 : Récupération d'un incident par ID\n";
+// $incidentsModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetch() {
+//                 return ['ID_incident' => 1, 'nom' => 'Incident 1', 'description' => 'Description 1', 'date_creation' => '2024-12-18', 'niveauPriorite' => 2];
+//             }
+//         };
+//     }
+// };
+// $result = $incidentsModele->recupererIncidentParId(1);
+// if ($result['ID_incident'] === 1) {
+//     echo "PASS : Incident correctement récupéré par ID.\n";
+// } else {
+//     echo "FAIL : Incident non récupéré correctement par ID.\n";
+// }
+
+// // Test 4 : Mise à jour d'un incident
+// echo "\nTest 4 : Mise à jour d'un incident\n";
+// $incidentsModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {
+//                 echo "Mise à jour effectuée.\n";
+//             }
+//         };
+//     }
+// };
+// $incidentsModele->mettreAJourIncident(1, 'Incident Modifié', 'Description modifiée', 3);
+
+// // Test 5 : Ajout d'un incident
+// echo "\nTest 5 : Ajout d'un incident\n";
+// $incidentsModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {
+//                 echo "Incident ajouté.\n";
+//             }
+//         };
+//     }
+// };
+// $incidentsModele->ajouterIncident('Nouvel Incident', 'Description du nouvel incident', 2);
+
+// // Test 6 : Suppression d'un incident
+// echo "\nTest 6 : Suppression d'un incident\n";
+// $incidentsModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {
+//                 echo "Incident supprimé.\n";
+//             }
+//         };
+//     }
+// };
+// $incidentsModele->supprimerIncident(1);

@@ -126,3 +126,107 @@ class CapteurModele {
         $stmt->execute();
     }
 }
+
+
+
+
+
+
+// // Test 1 : Calculer la production des dernières heures avec des données valides
+// echo "Test 1 : Calcul de la production des dernières heures\n";
+// $capteurModele = new CapteurModele();
+// $capteurModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetch() {
+//                 return ['total' => 150]; // Valeur simulée
+//             }
+//         };
+//     }
+// };
+// $result = $capteurModele->calculerProductionDernieresHeures('192.168.0.1', 6);
+// if ($result === 150) {
+//     echo "PASS : Production correctement calculée.\n";
+// } else {
+//     echo "FAIL : La production n'a pas été correctement calculée.\n";
+// }
+
+// // Test 2 : Récupérer les capteurs par type avec des données valides
+// echo "\nTest 2 : Récupération des capteurs par type\n";
+// $capteurModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetchAll($fetchStyle = null) {
+//                 return [
+//                     ['IPv4' => '192.168.0.1', 'Name' => 'Capteur 1', 'StateUp' => 1, 'DateAdded' => '2024-12-18', 'nombre_donnees' => 5],
+//                     ['IPv4' => '192.168.0.2', 'Name' => 'Capteur 2', 'StateUp' => 0, 'DateAdded' => '2024-12-17', 'nombre_donnees' => 3]
+//                 ];
+//             }
+//         };
+//     }
+// };
+// $result = $capteurModele->recupererCapteursParType(1);
+// if (count($result) === 2 && $result[0]['IPv4'] === '192.168.0.1') {
+//     echo "PASS : Capteurs correctement récupérés.\n";
+// } else {
+//     echo "FAIL : Les capteurs n'ont pas été correctement récupérés.\n";
+// }
+
+// // Test 3 : Mettre à jour l'état d'un capteur
+// echo "\nTest 3 : Mise à jour de l'état d'un capteur\n";
+// $capteurModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {
+//                 echo "Mise à jour de l'état du capteur effectuée.\n";
+//             }
+//         };
+//     }
+// };
+// $capteurModele->mettreAJourEtatCapteur('192.168.0.1', true);
+
+// // Test 4 : Compter les données d'un capteur
+// echo "\nTest 4 : Compter les données d'un capteur\n";
+// $capteurModele->pdo = new class {
+//     public function prepare($query) {
+//         return new class {
+//             public function bindParam($param, $value, $type = null) {}
+//             public function execute() {}
+//             public function fetch() {
+//                 return ['total' => 10]; // Valeur simulée
+//             }
+//         };
+//     }
+// };
+// $result = $capteurModele->compterDonneesCapteur('192.168.0.1');
+// if ($result === 10) {
+//     echo "PASS : Nombre de données correctement compté.\n";
+// } else {
+//     echo "FAIL : Le nombre de données n'a pas été correctement compté.\n";
+// }
+
+// // Test 5 : Récupérer tous les capteurs
+// echo "\nTest 5 : Récupération de tous les capteurs\n";
+// $capteurModele->pdo = new class {
+//     public function query($query) {
+//         return new class {
+//             public function fetchAll() {
+//                 return [
+//                     ['IPv4' => '192.168.0.1', 'Name' => 'Capteur 1', 'StateUp' => 1, 'DateAdded' => '2024-12-18'],
+//                     ['IPv4' => '192.168.0.2', 'Name' => 'Capteur 2', 'StateUp' => 0, 'DateAdded' => '2024-12-17']
+//                 ];
+//             }
+//         };
+//     }
+// };
+// $result = $capteurModele->recupererCapteurs();
+// if (count($result) === 2 && $result[0]['IPv4'] === '192.168.0.1') {
+//     echo "PASS : Tous les capteurs ont été correctement récupérés.\n";
+// } else {
+//     echo "FAIL : Les capteurs n'ont pas été correctement récupérés.\n";
+// }

@@ -79,3 +79,65 @@ class AuthModele {
         return false;
     }
 }
+
+
+
+
+
+
+// // Test 1 : Vérification de la connexion LDAP avec des identifiants valides
+// echo "Test 1 : Connexion LDAP valide\n";
+// $authModele = new AuthModele();
+
+// // Mock de connexion LDAP valide
+// $authModele->ldapHost = "mock://ldap-valid";
+// $authModele->ldapPort = 389;
+// $_SESSION = [];
+// $result = $authModele->verifierUtilisateurLDAP("validUser", "validPassword");
+// if ($result && $result['role'] === 'user') {
+//     echo "PASS : Connexion réussie avec utilisateur valide.\n";
+// } else {
+//     echo "FAIL : Connexion échouée avec utilisateur valide.\n";
+// }
+
+// // Test 2 : Connexion LDAP avec mot de passe incorrect
+// echo "\nTest 2 : Connexion LDAP avec mot de passe incorrect\n";
+// $_SESSION = [];
+// $result = $authModele->verifierUtilisateurLDAP("validUser", "wrongPassword");
+// if (!$result && isset($_SESSION['error']) && strpos($_SESSION['error'], 'mot de passe incorrect') !== false) {
+//     echo "PASS : Échec attendu avec mot de passe incorrect.\n";
+// } else {
+//     echo "FAIL : Résultat inattendu avec mot de passe incorrect.\n";
+// }
+
+// // Test 3 : Connexion LDAP avec utilisateur inexistant
+// echo "\nTest 3 : Connexion LDAP avec utilisateur inexistant\n";
+// $_SESSION = [];
+// $result = $authModele->verifierUtilisateurLDAP("nonexistentUser", "somePassword");
+// if (!$result && isset($_SESSION['error']) && strpos($_SESSION['error'], 'Utilisateur non trouvé') !== false) {
+//     echo "PASS : Échec attendu avec utilisateur inexistant.\n";
+// } else {
+//     echo "FAIL : Résultat inattendu avec utilisateur inexistant.\n";
+// }
+
+// // Test 4 : Connexion LDAP avec serveur inaccessible
+// echo "\nTest 4 : Connexion LDAP avec serveur inaccessible\n";
+// $authModele->ldapHost = "mock://ldap-invalid";
+// $_SESSION = [];
+// $result = $authModele->verifierUtilisateurLDAP("anyUser", "anyPassword");
+// if (!$result && isset($_SESSION['error']) && strpos($_SESSION['error'], 'Échec de connexion au serveur LDAP') !== false) {
+//     echo "PASS : Échec attendu avec serveur inaccessible.\n";
+// } else {
+//     echo "FAIL : Résultat inattendu avec serveur inaccessible.\n";
+// }
+
+// // Test 5 : Connexion LDAP avec rôle admin
+// echo "\nTest 5 : Connexion LDAP avec rôle admin\n";
+// $authModele->ldapHost = "mock://ldap-valid-admin";
+// $_SESSION = [];
+// $result = $authModele->verifierUtilisateurLDAP("adminUser", "validPassword");
+// if ($result && $result['role'] === 'admin') {
+//     echo "PASS : Connexion réussie avec utilisateur admin.\n";
+// } else {
+//     echo "FAIL : Connexion échouée avec utilisateur admin.\n";
+// }
