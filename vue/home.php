@@ -63,7 +63,8 @@
     </div>
 </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/chart.js"></script>
+    
     <script>
         // Récupère les données de PHP
         const labels = <?= json_encode(array_column($production30Jours, 'jour')); ?>;

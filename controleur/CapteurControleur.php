@@ -39,6 +39,7 @@ class CapteursControleur {
     
 
     public function changerEtatCapteur() {
+        $this->checkPermission();
         if (isset($_GET['id']) && isset($_GET['action'])) {
             $ipCapteur = htmlspecialchars($_GET['id']);
             $etat = ($_GET['action'] === 'start-sensor') ? true : false;
@@ -54,6 +55,7 @@ class CapteursControleur {
 $controleur = new CapteursControleur();
 
 if (isset($_GET['action'])) {
+    $this->checkPermission();
     switch ($_GET['action']) {
         case 'start-sensor':
         case 'stop-sensor':
