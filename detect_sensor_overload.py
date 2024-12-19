@@ -108,3 +108,92 @@ def check_production_anomaly():
 
 if __name__ == "__main__":
     check_production_anomaly()
+
+
+
+# Tests unitaires du module sensorDetectAnomaly
+# import unittest
+# from unittest.mock import MagicMock, patch
+# from datetime import datetime, timedelta
+
+# # Test pour les fonctions de sensorDetectAnomaly
+
+# class TestProductionAnomalyChecker(unittest.TestCase):
+#     @patch('mysql.connector.connect')
+#     def test_connect_to_db_success(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_connect.return_value = mock_connection
+
+#         from sensorDetectAnomaly import connect_to_db
+#         connection = connect_to_db()
+
+#         self.assertEqual(connection, mock_connection)
+#         mock_connect.assert_called_once()
+
+#     @patch('mysql.connector.connect')
+#     def test_fetch_last_week_production(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.fetchall.return_value = [
+#             {'id_capteur': 1, 'total_production': 100},
+#             {'id_capteur': 2, 'total_production': 150}
+#         ]
+#         mock_connect.return_value = mock_connection
+
+#         from sensorDetectAnomaly import fetch_last_week_production
+#         results = fetch_last_week_production(mock_connection)
+
+#         self.assertEqual(len(results), 2)
+#         self.assertEqual(results[0]['id_capteur'], 1)
+#         self.assertEqual(results[1]['total_production'], 150)
+
+#     @patch('mysql.connector.connect')
+#     def test_fetch_previous_average_production(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.fetchone.return_value = {'avg_production': 75}
+
+#         mock_connect.return_value = mock_connection
+
+#         from sensorDetectAnomaly import fetch_previous_average_production
+#         avg = fetch_previous_average_production(mock_connection, 1, datetime.now())
+
+#         self.assertEqual(avg, 75)
+
+#     @patch('mysql.connector.connect')
+#     def test_has_recent_alert(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.fetchone.return_value = {'recent_alerts': 1}
+
+#         mock_connect.return_value = mock_connection
+
+#         from sensorDetectAnomaly import has_recent_alert
+#         result = has_recent_alert(mock_connection, 1)
+
+#         self.assertTrue(result)
+
+#     @patch('mysql.connector.connect')
+#     def test_insert_alert(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.execute.return_value = None
+
+#         mock_connect.return_value = mock_connection
+
+#         from sensorDetectAnomaly import insert_alert
+#         insert_alert(mock_connection, 1, "Surcharge détectée", "critique")
+
+#         mock_cursor.execute.assert_called_once()
+#         mock_connection.commit.assert_called_once()
+
+# if __name__ == "__main__":
+#     unittest.main()
