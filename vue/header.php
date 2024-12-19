@@ -33,7 +33,9 @@ require_once __DIR__ . '/../config/config.php';
                 <a href="#consommation">Consommation</a>
                 <a href="#productionsolaire">Production solaire</a>
                 <a href="incidents">Incidents</a>
+                <?php if (isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin") { ?>
                 <a href="capteurs">Capteurs</a>
+                <?php } ?>
                 <a href="deconnexion">Déconnexion</a>
             </div>
         </nav>

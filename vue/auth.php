@@ -17,7 +17,6 @@ unset($_SESSION['error']);
     <style>
         body {
             background:#00081A;
-            color:snow;
         }
     </style>
     <script>

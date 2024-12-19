@@ -17,7 +17,9 @@ class HomeModele {
             return "Tout va mal ! 😭";
         }
 
-        return "Tout va bien $utilisateur[nom] $utilisateur[prenom] ! 😊";
+        $nomUtilisateur = ucwords("$utilisateur[nom] $utilisateur[prenom]");
+
+        return "Tout va bien $nomUtilisateur ! 😊";
     }
 
     public function recupererProductionDernieres24h($typeEnergie) {

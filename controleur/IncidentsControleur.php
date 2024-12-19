@@ -17,6 +17,7 @@ class IncidentsControleur {
     }
 
     public function afficherPage() {
+        $description = $this->modele->getDescription();
         $recupererDerniersIncidents = $this->modele->recupererDerniersIncidents();
         $incidentEdit = null;
     
@@ -26,7 +27,16 @@ class IncidentsControleur {
     
         require __DIR__ . '/../vue/incidents.php';
     }
+
+    public function checkPermission() {
+        if (!(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin")) {
+            header('Location: incidents');
+            exit();
+        }
+    }
+
     public function creerIncident() {
+        $this->checkPermission();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nom = trim($_POST['nom']);
             $description = trim($_POST['description']);
@@ -47,6 +57,7 @@ class IncidentsControleur {
     }
     
     public function mettreAJourIncident() {
+        $this->checkPermission();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = (int)$_POST['id'];
             $nom = trim($_POST['nom']);
@@ -68,6 +79,7 @@ class IncidentsControleur {
     }
     
     private function validerIncident($nom, $description, $niveau) {
+        $this->checkPermission();
         // Valide le nom (min 3, max 100)
         if (strlen($nom) < 3 || strlen($nom) > 100) {
             return false;
@@ -88,6 +100,7 @@ class IncidentsControleur {
     
 
     public function supprimerIncident() {
+        $this->checkPermission();
         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             $id = (int) $_GET['id'];
             $this->modele->supprimerIncident($id);
@@ -95,6 +108,8 @@ class IncidentsControleur {
         header('Location: incidents');
         exit();
     }
+
+    
     
     
     

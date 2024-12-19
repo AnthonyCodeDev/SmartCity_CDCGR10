@@ -13,39 +13,25 @@ class AuthModele {
         $ldapConnection = ldap_connect($this->ldapHost, $this->ldapPort);
 
         if (!$ldapConnection) {
-            echo "Impossible de se connecter au serveur LDAP";
             return false; // Échec de connexion au serveur LDAP
         }
 
         ldap_set_option($ldapConnection, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ldapConnection, LDAP_OPT_REFERRALS, 0);
-        // afficher toutes les infos de l'ad
+
         $ldapBind = @ldap_bind($ldapConnection, $username . "@smartcity.lan", $motDePasse);
 
         if (!$ldapBind) {
-            echo "LDAP bind failed: " . ldap_error($ldapConnection);
+            $_SESSION['error'] = "Échec de l'authentification : mot de passe incorrect.";
+            ldap_close($ldapConnection);
+            return false;
         }
 
-        // search the user
-        // $result = ldap_search($ldapConnection, "DC=smartcity,DC=lan", "(objectclass=*)");
-        // $data = ldap_get_entries($ldapConnection, $result);
-
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-
-        // Options LDAP
-
-        // Préparation du filtre de recherche
         $searchFilter = "(sAMAccountName=$username)";
-        echo "Base DN utilisé : " . $this->ldapBaseDn . "<br>";
-        echo "Filtre de recherche : " . $searchFilter . "<br>";
-
-        // Recherche dans LDAP
         $searchResult = @ldap_search($ldapConnection, $this->ldapBaseDn, $searchFilter);
 
         if (!$searchResult) {
-            echo "Erreur LDAP lors de la recherche : " . ldap_error($ldapConnection) . "<br>";
+            $_SESSION['error'] = "Erreur LDAP lors de la recherche : " . ldap_error($ldapConnection);
             ldap_close($ldapConnection);
             return false;
         }
@@ -53,32 +39,34 @@ class AuthModele {
         $entries = ldap_get_entries($ldapConnection, $searchResult);
 
         if ($entries['count'] === 0) {
-            echo "Utilisateur non trouvé dans le répertoire LDAP.<br>";
+            $_SESSION['error'] = "Utilisateur non trouvé dans le répertoire LDAP.";
             ldap_close($ldapConnection);
             return false;
         }
 
-        // Récupération du DN (Distinguished Name) de l'utilisateur
         $userDn = $entries[0]['dn'];
-        echo "DN de l'utilisateur trouvé : $userDn<br>";
 
-        // Tentative d'authentification avec les identifiants fournis
         if (@ldap_bind($ldapConnection, $userDn, $motDePasse)) {
-            echo "Authentification réussie pour l'utilisateur $username.<br>";
+            $memberOf = $entries[0]['memberof'] ?? [];
+            $role = 'user'; // Rôle par défaut
+
+            if (is_array($memberOf) && in_array('CN=GG_AdminEnergie,OU=GG,OU=Groups,DC=smartcity,DC=lan', $memberOf)) {
+                $role = 'admin';
+            }
 
             ldap_unbind($ldapConnection);
 
-            // Retourne les informations utiles sur l'utilisateur
             return [
                 'nom' => $entries[0]['sn'][0] ?? '',
                 'prenom' => $entries[0]['givenname'][0] ?? '',
-                'email' => $entries[0]['mail'][0] ?? ''
+                'email' => $entries[0]['mail'][0] ?? '',
+                'role' => $role
             ];
         } else {
-            echo "Échec de l'authentification : mot de passe incorrect.<br>";
+            $_SESSION['error'] = "Échec de l'authentification : mot de passe incorrect.";
         }
 
         ldap_unbind($ldapConnection);
-        return false; // Échec de connexion ou utilisateur non trouvé
+        return false;
     }
 }

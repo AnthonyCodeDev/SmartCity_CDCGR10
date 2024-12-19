@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/../config/config.php';
+
 require_once __DIR__ . '/../modele/CapteurModele.php';
 
 class CapteursControleur {
@@ -10,7 +12,15 @@ class CapteursControleur {
         $this->modele = new CapteurModele();
     }
 
+    public function checkPermission() {
+        if (!(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin")) {
+            header('Location: ' . BASE_URL);
+            exit();
+        }
+    }
+
     public function afficherPage() {
+        $this->checkPermission();
         $capteursSolaire = $this->modele->recupererCapteursParType(1); // 1 = solaire
         $capteursEolien = $this->modele->recupererCapteursParType(2); // 2 = éolien
     

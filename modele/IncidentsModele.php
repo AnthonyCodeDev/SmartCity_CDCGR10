@@ -9,6 +9,14 @@ class IncidentsModele {
         $this->pdo = $pdo;
     }
 
+    public function getDescription() {
+        if (isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin") {
+            return "Vérifiez les derniers incidents et intervenez si besoin.";
+        } else {
+            return "Bienvenue sur la page des incidents. Vous pouvez voir les incidents.";
+        }
+    }
+
     public function recupererDerniersIncidents() {
         $stmt = $this->pdo->query("SELECT ID_incident, nom, description, date_creation, niveauPriorite FROM incidents ORDER BY date_creation DESC");
         return $stmt->fetchAll();
