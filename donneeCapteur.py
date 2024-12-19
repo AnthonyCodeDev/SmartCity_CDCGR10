@@ -5,10 +5,10 @@ from datetime import datetime
 
 # Configuration de la base de données
 db_config = {
-    'host': 'x',
-    'user': 'y',
-    'password': 'z',
-    'database': 'a'
+    'host': 'localhost',
+    'user': 'root',
+    'password': '',
+    'database': 'db_smartcity_energie'
 }
 
 def connect_to_db():
@@ -94,3 +94,89 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+# Tests unitaires du module donneeCapteur
+# import unittest
+# from unittest.mock import MagicMock, patch
+# from datetime import datetime
+# import random
+
+# # Test pour les fonctions de donneecapteur
+
+# class TestDonneesCapteur(unittest.TestCase):
+#     @patch('mysql.connector.connect')
+#     def test_connect_to_db_success(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_connect.return_value = mock_connection
+
+#         from donneeCapteur import connect_to_db
+#         connection = connect_to_db()
+
+#         self.assertEqual(connection, mock_connection)
+#         mock_connect.assert_called_once()
+
+#     @patch('mysql.connector.connect')
+#     def test_connect_to_db_failure(self, mock_connect):
+#         mock_connect.side_effect = Exception("Connexion échouée")
+
+#         from donneeCapteur import connect_to_db
+#         with self.assertRaises(SystemExit):
+#             connect_to_db()
+
+#     @patch('mysql.connector.connect')
+#     def test_fetch_sensors(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.fetchall.return_value = [
+#             {'IPv4': '192.168.1.1', 'ID_SensorType': 1},
+#             {'IPv4': '192.168.1.2', 'ID_SensorType': 2}
+#         ]
+#         mock_connect.return_value = mock_connection
+
+#         from donneeCapteur import fetch_sensors
+#         sensors = fetch_sensors(mock_connection)
+
+#         self.assertEqual(len(sensors), 2)
+#         self.assertEqual(sensors[0]['IPv4'], '192.168.1.1')
+#         self.assertEqual(sensors[1]['ID_SensorType'], 2)
+
+#     @patch('mysql.connector.connect')
+#     def test_insert_into_capteurs_energie(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.execute.return_value = None
+
+#         mock_connect.return_value = mock_connection
+
+#         sensors = [{'IPv4': '192.168.1.1', 'ID_SensorType': 1}]
+
+#         from donneeCapteur import insert_into_capteurs_energie
+#         insert_into_capteurs_energie(mock_connection, sensors)
+
+#         mock_cursor.execute.assert_called_once()
+#         mock_connection.commit.assert_called_once()
+
+#     @patch('mysql.connector.connect')
+#     def test_insert_into_consommation_energie(self, mock_connect):
+#         mock_connection = MagicMock()
+#         mock_cursor = MagicMock()
+
+#         mock_connection.cursor.return_value = mock_cursor
+#         mock_cursor.execute.return_value = None
+
+#         mock_connect.return_value = mock_connection
+
+#         from donneeCapteur import insert_into_consommation_energie
+#         insert_into_consommation_energie(mock_connection)
+
+#         mock_cursor.execute.assert_called_once()
+#         mock_connection.commit.assert_called_once()
+
+# if __name__ == "__main__":
+#     unittest.main()
