@@ -85,7 +85,7 @@
             </a>
             <?php } ?>
         <?php } else { ?>
-            <div class="smartcity-incidents-alert error">
+            <div class="smartcity-incidents-alert danger">
                 <div class="smartcity-incidents-alert-content">
                     <div class="smartcity-incidents-alert-icon">
                         <div class="smartcity-incidents-alert-bubble">

@@ -75,9 +75,16 @@ try {
         INSERT INTO energetic_report (id_rapport, rapport_type, date_rapport, chemin_access)
         VALUES (:id_rapport, :rapport_type, :date_rapport, :chemin_access)
     ");
+    
+    if (isset($_GET['automatic'])) {
+        $isAutomatic = 1;
+    } else {
+        $isAutomatic = 0;
+    }
+
     $stmt->execute([
         ':id_rapport' => $fileName,
-        ':rapport_type' => 0,
+        ':rapport_type' => $isAutomatic,
         ':date_rapport' => $dateRapport,
         ':chemin_access' => $fileName, // Nom du fichier uniquement
     ]);

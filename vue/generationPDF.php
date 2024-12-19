@@ -48,25 +48,26 @@
     <div class="smartcity-description">Surveillez en temps réel votre consommation et votre production d’énergie. Optimisez vos ressources pour un avenir plus durable. ⚡</div>
 </main>
 <?php
-// Exemple de données dynamiques récupérées depuis la base de données
-$consommation = 120; // Exemple : consommation totale en kWh
-$production_solaire = 250; // Exemple : production solaire en kWh
-$production_eolienne = 180; // Exemple : production éolienne en kWh
+
+if (!isset($recupererInformationsGlobales)) {
+    echo 'Aucune donnée à afficher.';
+    return;
+}
 ?>
 
 <div style="width: 100%; height: 150px; overflow: hidden;margin-top: 30px;display:flex;justify-content: center;border-radius:20px">
   <div style="float: left; width: 26.7%; height: 100%; background-color: #039DE0; text-align: center; color: white; padding: 20px; box-sizing: border-box;margin-right:10px;" class="smartcity-conso-container">
-    <div style="font-size: 24px; font-weight: bold;"><?php echo $consommation; ?></div>
+    <div style="font-size: 24px; font-weight: bold;"><?php echo $recupererInformationsGlobales['consommation']; ?></div>
     <div style="font-size: 18px;">kWh</div>
     <div style="font-size: 14px;">Consommation</div>
   </div>
   <div style="float: left; width: 26.7%; height: 100%; background-color: #F9B759; text-align: center; color: white; padding: 20px; box-sizing: border-box;margin-right:10px" class="smartcity-conso-container">
-    <div style="font-size: 24px; font-weight: bold;"><?php echo $production_solaire; ?></div>
+    <div style="font-size: 24px; font-weight: bold;"><?php echo $recupererInformationsGlobales['productionSolaire']; ?></div>
     <div style="font-size: 18px;">kWh</div>
     <div style="font-size: 14px;">Production solaire</div>
   </div>
   <div style="float: left; width: 26.7%; height: 100%; background-color: #1E9E88; text-align: center; color: white; padding: 20px; box-sizing: border-box;" class="smartcity-conso-container">
-    <div style="font-size: 24px; font-weight: bold;"><?php echo $production_eolienne; ?></div>
+    <div style="font-size: 24px; font-weight: bold;"><?php echo $recupererInformationsGlobales['productionEolienne']; ?></div>
     <div style="font-size: 18px;">kWh</div>
     <div style="font-size: 14px;">Production éolienne</div>
   </div>
