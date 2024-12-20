@@ -117,7 +117,7 @@ class CapteurModele {
         Return: aucun
         */
         $stmt = $this->pdo->prepare("
-            UPDATE Sensor
+            UPDATE sensor
             SET StateUp = :etat
             WHERE IPv4 = :ipCapteur
         ");
