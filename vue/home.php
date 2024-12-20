@@ -67,7 +67,7 @@ if (count($recupererAlertesProduction) > 4) {
     </div>
 </main>
 <section class="smartcity-conso">
-    <div class="smartcity-conso-container smartcity-conso-container-blue">
+    <a class="smartcity-conso-container smartcity-conso-container-blue" href="#consommation">
         <div class="smartcity-conso-title">
             <?= htmlspecialchars($recupererInformationsGlobales['consommation']); ?>
         </div>
@@ -77,8 +77,8 @@ if (count($recupererAlertesProduction) > 4) {
         <div class="smartcity-conso-description">
             Consommation
         </div>
-    </div>
-    <div class="smartcity-conso-container smartcity-conso-container-orange">
+    </a>
+    <a class="smartcity-conso-container smartcity-conso-container-orange" href="#production">
         <div class="smartcity-conso-title">
             <?= htmlspecialchars($recupererInformationsGlobales['productionSolaire']); ?>
         </div>
@@ -88,8 +88,8 @@ if (count($recupererAlertesProduction) > 4) {
         <div class="smartcity-conso-description">
             Production solaire
         </div>
-    </div>
-    <div class="smartcity-conso-container smartcity-conso-container-green">
+    </a>
+    <a class="smartcity-conso-container smartcity-conso-container-green" href="#production">
         <div class="smartcity-conso-title">
             <?= htmlspecialchars($recupererInformationsGlobales['productionEolienne']); ?>
         </div>
@@ -99,8 +99,43 @@ if (count($recupererAlertesProduction) > 4) {
         <div class="smartcity-conso-description">
             Production éolienne
         </div>
-    </div> 
+    </a> 
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const animateNumber = (element, targetValue) => {
+        let startValue = 0;
+        const duration = 2000; // Durée totale de l'animation en ms
+        const increment = Math.ceil(targetValue / (duration / 10)); // Incrémentation pour chaque intervalle
+        const interval = 10; // Intervalle de mise à jour en ms
+        
+        const counter = setInterval(() => {
+            startValue += increment;
+            if (startValue >= targetValue) {
+                clearInterval(counter);
+                startValue = targetValue; // Pour éviter de dépasser la valeur cible
+            }
+            element.textContent = startValue;
+        }, interval);
+    };
+
+    // Récupération des éléments
+    const consoElement = document.querySelector('.smartcity-conso-container-blue .smartcity-conso-title');
+    const prodSolaireElement = document.querySelector('.smartcity-conso-container-orange .smartcity-conso-title');
+    const prodEolienneElement = document.querySelector('.smartcity-conso-container-green .smartcity-conso-title');
+
+    // Récupération des valeurs (assurez-vous que les valeurs sont des nombres)
+    const consoValue = parseInt(consoElement.textContent, 10);
+    const prodSolaireValue = parseInt(prodSolaireElement.textContent, 10);
+    const prodEolienneValue = parseInt(prodEolienneElement.textContent, 10);
+
+    // Lancement des animations
+    animateNumber(consoElement, consoValue);
+    animateNumber(prodSolaireElement, prodSolaireValue);
+    animateNumber(prodEolienneElement, prodEolienneValue);
+});
+
+</script>
 <div class="smartcity-graph-description">
     Statistiques globales des dernières 24 heures.
 </div>
@@ -114,7 +149,7 @@ if (count($recupererAlertesProduction) > 4) {
     </div>
 </section>
 
-<section class="smartcity-graph" id="productionsolaire">
+<section class="smartcity-graph" id="production">
     <div class="chart-container">
         <div class="chart-container-title">
             Production d'énergie : Solaire & Éolienne

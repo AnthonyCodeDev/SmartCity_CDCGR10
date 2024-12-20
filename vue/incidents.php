@@ -20,8 +20,6 @@
         <?php unset($_SESSION['error']); ?>
     <?php endif; ?>
 
-
-    
     <?php
 
         // Détermine si on est en mode édition ou création
@@ -45,7 +43,7 @@
 
                 <div class="smartcity-form-group">
                     <label for="description" class="smartcity-form-label">Description :</label>
-                    <textarea minlength="12" maxlength="100" id="description" name="description" class="smartcity-form-textarea" placeholder="Décrivez l'incident" required><?= $isEditMode ? htmlspecialchars($incidentEdit['description']) : ''; ?></textarea>
+                    <textarea minlength="12" maxlength="500" id="description" name="description" class="smartcity-form-textarea" placeholder="Décrivez l'incident" required><?= $isEditMode ? htmlspecialchars($incidentEdit['description']) : ''; ?></textarea>
                 </div>
 
                 <div class="smartcity-form-group">
@@ -85,10 +83,10 @@ function getNiveauTexte($niveau) {
                 <?php echo htmlspecialchars($incident['date_creation']); ?>
                 <?php if (isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin") { ?>
                 <a href="incidents?action=delete-incident&id=<?= $incident['ID_incident']; ?>" 
-                    onclick="return confirm('Voulez-vous vraiment supprimer cet incident ?');">
+                    onclick="return confirm('Voulez-vous vraiment supprimer cet incident ?');" class="smartcity-incidents-alert-action">
                     🗑️
                 </a>
-                <a href="incidents?action=edit-incident&id=<?= $incident['ID_incident']; ?>">
+                <a href="incidents?action=edit-incident&id=<?= $incident['ID_incident']; ?>" class="smartcity-incidents-alert-action">
                     ✏️
                 </a>
                 <?php } ?>

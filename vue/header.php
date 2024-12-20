@@ -37,10 +37,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
                 <a href="#consommation">Consommation</a>
                 <a href="#productionsolaire">Production solaire</a>
                 <a href="incidents">Incidents</a>
-                <?php if (isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]["role"] == "admin") { ?>
-                <a href="capteurs">Capteurs</a>
-                <?php } ?>
+                <?php 
+                if (isset($_SESSION["utilisateur"]) && is_array($_SESSION["utilisateur"]) && isset($_SESSION["utilisateur"]["role"])) {
+                    if ($_SESSION["utilisateur"]["role"] == "admin") { ?>
+                        <a href="capteurs">Capteurs</a>
+                    <?php 
+                    } 
+                }
+                ?>
                 <a href="deconnexion">Déconnexion</a>
+
             </div>
         </nav>
     </header>

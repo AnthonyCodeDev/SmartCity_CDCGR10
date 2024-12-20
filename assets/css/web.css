@@ -31,6 +31,14 @@
 
     color: #FFFFFF;
 
+    transition: all 0.2s ease;
+
+}
+
+.smartcity-navbar-item-two a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    height: 38px;
 }
 
 .smartcity-navbar-item-two {
@@ -190,7 +198,12 @@
     flex-direction: column;
     gap: 12px;
 
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
 
+.smartcity-conso-container:hover {
+    transform: translateY(-10px);
 }
 
 .smartcity-conso-title {
@@ -304,6 +317,12 @@
     border-radius: 16.8013px;
 
     margin-top: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.smartcity-incidents-alert:hover {
+    transform: translateX(5px);
 }
 
 .smartcity-incidents-alert.danger {
@@ -687,6 +706,14 @@
     border-radius: 8px;
     cursor: pointer;
     min-width: 150px;
+
+    transition: all 0.2s ease;
+}
+
+.smartcity-incidents-alert-btn:hover {
+    background-color: #0f0f0f;
+    border: 2.25px solid #0000001f;
+    color: #fff;
 }
 
 .chart-container {

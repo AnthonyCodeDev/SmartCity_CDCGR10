@@ -57,8 +57,8 @@ class AuthControlleur {
                 exit();
             } else {
                 $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrect.";
-                // header('Location: ' . BASE_URL);
-                // exit();
+                header('Location: ' . BASE_URL);
+                exit();
             }
         }
 

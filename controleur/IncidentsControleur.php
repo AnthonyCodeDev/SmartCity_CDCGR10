@@ -136,7 +136,7 @@ class IncidentsControleur {
         }
     
         // Valide la description (min 12, max 100)
-        if (strlen($description) < 12 || strlen($description) > 100) {
+        if (strlen($description) < 12 || strlen($description) > 500) {
             return false;
         }
     

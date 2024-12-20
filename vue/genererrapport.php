@@ -40,6 +40,41 @@
         </div>
     </div> 
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const animateNumber = (element, targetValue) => {
+        let startValue = 0;
+        const duration = 2000; // Durée totale de l'animation en ms
+        const increment = Math.ceil(targetValue / (duration / 10)); // Incrémentation pour chaque intervalle
+        const interval = 10; // Intervalle de mise à jour en ms
+        
+        const counter = setInterval(() => {
+            startValue += increment;
+            if (startValue >= targetValue) {
+                clearInterval(counter);
+                startValue = targetValue; // Pour éviter de dépasser la valeur cible
+            }
+            element.textContent = startValue;
+        }, interval);
+    };
+
+    // Récupération des éléments
+    const consoElement = document.querySelector('.smartcity-conso-container-blue .smartcity-conso-title');
+    const prodSolaireElement = document.querySelector('.smartcity-conso-container-orange .smartcity-conso-title');
+    const prodEolienneElement = document.querySelector('.smartcity-conso-container-green .smartcity-conso-title');
+
+    // Récupération des valeurs (assurez-vous que les valeurs sont des nombres)
+    const consoValue = parseInt(consoElement.textContent, 10);
+    const prodSolaireValue = parseInt(prodSolaireElement.textContent, 10);
+    const prodEolienneValue = parseInt(prodEolienneElement.textContent, 10);
+
+    // Lancement des animations
+    animateNumber(consoElement, consoValue);
+    animateNumber(prodSolaireElement, prodSolaireValue);
+    animateNumber(prodEolienneElement, prodEolienneValue);
+});
+
+</script>
 <div class="smartcity-graph-description">
     Statistiques globales des dernières 24 heures.
 </div>
