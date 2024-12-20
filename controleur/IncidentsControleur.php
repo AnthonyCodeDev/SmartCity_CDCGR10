@@ -65,12 +65,20 @@ class IncidentsControleur {
         /*
         QUI: Vergeylen Anthony
         QUAND: 18-12-2024
-        QUOI: Créer un nouvel incident
+        QUOI: Créer un nouvel incident avec limitation (5 min)
         
         Arguments: aucun
         Return: aucun
         */
         $this->checkPermission();
+    
+        // Vérifier si un cookie ou une session limite est défini
+        if (isset($_SESSION['dernierIncident']) && time() - $_SESSION['dernierIncident'] < 300) {
+            $_SESSION['error'] = "Vous ne pouvez créer un incident que toutes les 5 minutes.";
+            header('Location: incidents?action=create-incident');
+            exit();
+        }
+    
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nom = trim($_POST['nom']);
             $description = trim($_POST['description']);
@@ -85,10 +93,16 @@ class IncidentsControleur {
     
             // Ajouter l'incident si les données sont valides
             $this->modele->ajouterIncident($nom, $description, $niveau);
+    
+            // Définir le cookie et la session pour limiter la création
+            $_SESSION['dernierIncident'] = time();
+            setcookie('dernierIncident', time(), time() + 300, '/');
+    
             header('Location: incidents');
             exit();
         }
     }
+    
     
     public function mettreAJourIncident() {
         /*
