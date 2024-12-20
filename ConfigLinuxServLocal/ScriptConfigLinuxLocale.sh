@@ -3,7 +3,7 @@
 
 # Variables de sauvegarde
 BACKUP_DIR="/backup"  # Dossier de sauvegarde
-WEB_DIR="/var/www/energie"
+WEB_DIR="/server/energie"
 DB_HOST="localhost"
 DB_NAME="db_smartcity_energie"
 DB_USER="root"
