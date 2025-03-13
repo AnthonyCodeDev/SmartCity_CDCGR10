@@ -5,7 +5,6 @@ Ce projet permet de suivre la **consommation** et la **production énergétique*
 
 ## Participants  
 - **Anthony Vergeylen**  
-- **Kelian Noullet**  
 - **Quentin Hemeryck**  
 - **Tom Deneyer**  
 
